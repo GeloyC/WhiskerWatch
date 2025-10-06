@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Router } from "express";
 import { getDB } from "../database.js"
-import cookieParser from 'cookie-parser';
+import bcrypt from 'bcrypt';
 import session from "express-session";
 
 import multer from 'multer';
@@ -51,7 +51,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-UserRoute.use(cookieParser());
 UserRoute.use('/FileUploads', express.static(path.join(__dirname, 'FileUploads')));
 
 
@@ -148,13 +147,14 @@ UserRoute.post('/signup', async (req, res) => {
           });
         }
 
-
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         const [result] = await db.query(
         `INSERT INTO users 
             (firstname, lastname, contactnumber, birthday, email, username, address, password) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ? )`,
-            [firstname, lastname, contactnumber, birthday, email, username, address, password]
+            [firstname, lastname, contactnumber, birthday, email, username, address, hashedPassword]
         );
 
         res.status(200).json({
@@ -167,7 +167,7 @@ UserRoute.post('/signup', async (req, res) => {
         })
 
     } catch(err) {
-        console.error('Login error:', err);
+        console.error('Sign up error:', err);
         res.status(500).json({ err: 'Internal server error' });
     }
 })
@@ -214,46 +214,101 @@ UserRoute.post('/check_username', async (req, res) => {
 
 
 
-UserRoute.post('/login', async (req, res) => {
-    let db = getDB();
-    try {
-        const { email, password } = req.body;
+// UserRoute.post('/login', async (req, res) => {
+//     let db = getDB();
+//     try {
+//         const { email, password } = req.body;
 
-        if (!email || !password) {
-            return res.status(400).json({ error: 'Email and password are required' });
-        }
+//         if (!email || !password) {
+//             return res.status(400).json({ error: 'Email and password are required' });
+//         }
 
-        const [rows] = await db.query(
-            'SELECT * FROM users WHERE email = ? and password = ?', [email, password]
-        );
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//           return res.status(401).json({ error: "Invalid credentials" });
+//         }
 
-        if (rows.length === 0) {
-            return res.status(401).json({ error: 'Invalid email or password' });
-        }
+//         const [rows] = await db.query(
+//             'SELECT * FROM users WHERE email = ? and password = ?', [email, password]
+//         );
 
-        const user = rows[0];
-        req.session.user = {
-            user_id: user.user_id,
-            role: user.role,
-            firstname: user.firstname,
-            lastname: user.lastname,
-        };
+//         if (rows.length === 0) {
+//             return res.status(401).json({ error: 'Invalid email or password' });
+//         }
+
+//         const user = rows[0];
+//         req.session.user = {
+//             user_id: user.user_id,
+//             role: user.role,
+//             firstname: user.firstname,
+//             lastname: user.lastname,
+//         };
 
 
-        res.status(200).json({
-            message: 'Login successful',
-            user: {
-                user_id: user.user_id,
-                role: user.role,
-                firstname: user.firstname,
-                lastname: user.lastname,
-            },
-        });
-    } catch (err) {
-        console.error('Login error:', err);
-        res.status(500).json({ err: 'Internal server error' });
+//         res.status(200).json({
+//             message: 'Login successful',
+//             user: {
+//                 user_id: user.user_id,
+//                 role: user.role,
+//                 firstname: user.firstname,
+//                 lastname: user.lastname,
+//             },
+//         });
+//     } catch (err) {
+//         console.error('Login error:', err);
+//         res.status(500).json({ err: 'Internal server error' });
+//     }
+// });
+
+
+UserRoute.post("/login", async (req, res) => {
+  const db = getDB();
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email and password are required" });
     }
+
+    // ✅ 1. Check if the email exists
+    const [rows] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
+    if (rows.length === 0) {
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+
+    const user = rows[0];
+
+    // ✅ 2. Compare entered password with hashed password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+
+    // ✅ 3. Save session info (optional)
+    req.session.user = {
+      user_id: user.user_id,
+      role: user.role,
+      firstname: user.firstname,
+      lastname: user.lastname,
+    };
+
+    // ✅ 4. Respond with safe user info (no password)
+    res.status(200).json({
+      message: "Login successful",
+      user: {
+        user_id: user.user_id,
+        role: user.role,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    console.error("Login error:", err);
+    res.status(500).json({ err: "Internal server error" });
+  }
 });
+
 
 
 
