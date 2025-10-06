@@ -126,7 +126,7 @@ const Whisker = () => {
                   </div>
 
                   <span className='pl-7 leading-tight'>
-                    As your points grow, you'll unlock new WhiskerMeter tiers that is visible on your <Link to='/profile' className='underline font-bold text-[#DC8801]'>Profile</Link>
+                    As your points grow, you'll unlock new WhiskerMeter tiers that is visible on your profile
                   </span>
                 </div>
               </div>

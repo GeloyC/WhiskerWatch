@@ -695,13 +695,6 @@ UserRoute.post('/feeding/form', upload.single('file'), async (req, res) => {
             `UPDATE users SET badge = ? WHERE user_id = ?`,
             [newBadge, user_id]
           );
-
-          let message = `Congratulations on achieving a badge of ${newBadge}. Keep on going!`;
-
-          await db.query(
-              `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,
-              [user_id, message]
-          );
         }
 
         return res.json({ message: 'File uploaded and DB updated successfully.' });
@@ -825,13 +818,6 @@ UserRoute.post('/feeding_report/:user_id', async (req, res) => {
       await db.query(
           `UPDATE users SET badge = ? WHERE user_id = ?`,
           [newBadge, user_id]
-      );
-
-      let message = `Congratulations on achieving a badge of ${newBadge}. Keep on going!`;
-
-      await db.query(
-          `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,
-          [user_id, message]
       );
     }
 
