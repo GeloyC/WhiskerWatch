@@ -10,6 +10,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { verifyUser } from "./User.js";
+import { Link } from "@react-email/components";
 
 const AdminRoute = Router();
 AdminRoute.use(express.json());
@@ -344,6 +345,7 @@ AdminRoute.patch('/form/status_update/:application_id', verifyUser, async (req, 
     const db = getDB();
     const application_id = req.params.application_id;
     const { status } = req.body;
+    let totalPointsEarned = 0;
 
     console.log('Incoming PATCH request');
     console.log('Application ID:', application_id);
@@ -376,6 +378,7 @@ AdminRoute.patch('/form/status_update/:application_id', verifyUser, async (req, 
             }
 
             const fullName = `${firstname} ${lastname}`;
+            totalPointsEarned += 10;
 
             // 2.2 Insert into volunteer table
             await db.query(`
@@ -383,6 +386,50 @@ AdminRoute.patch('/form/status_update/:application_id', verifyUser, async (req, 
                 VALUES (?, ?, NOW(), ?, 'Approved')
             `, [user_id, fullName, application_date]);
 
+            if (totalPointsEarned > 0) {
+                // Check if user already has a whiskermeter entry
+                const [rows] = await db.query(
+                    `SELECT points FROM whiskermeter WHERE user_id = ?`,
+                    [user_id]
+                );
+
+                if (rows.length > 0) {
+                    // Update existing points by adding earned points
+                    await db.query(
+                    `UPDATE whiskermeter SET points = points + ?, last_updated = CURRENT_TIMESTAMP WHERE user_id = ?`,
+                    [totalPointsEarned, user_id]
+                    );
+                } else {
+                    // Insert new whiskermeter row
+                    await db.query(
+                    `INSERT INTO whiskermeter (user_id, points) VALUES (?, ?)`,
+                    [user_id, totalPointsEarned]
+                    );
+                }
+
+                const [[{ points }]] = await db.query(
+                    `SELECT points FROM whiskermeter WHERE user_id = ?`,
+                    [user_id]
+                );
+
+                let newBadge = 'Toe Bean Trainee';
+                if (points >= 500) newBadge = 'The Catnip Captain';
+                else if (points >= 300) newBadge = 'Meowtain Mover';
+                else if (points >= 200) newBadge = 'Furmidable Friend';
+                else if (points >= 100) newBadge = 'Snuggle Scout';
+
+                await db.query(
+                    `UPDATE users SET badge = ? WHERE user_id = ?`,
+                    [newBadge, user_id]
+                );
+
+                let message = `Congratulations on achieving a badge of ${newBadge}. Keep on going!`;
+
+                await db.query(
+                    `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,
+                    [user_id, message]
+                );
+                }
 
             console.log('Volunteer record created for user_id:', user_id);
             console.log('User Info:', { user_id, firstname, lastname, application_date });
@@ -596,7 +643,7 @@ AdminRoute.patch('/adoption_form/status_update/:application_id', verifyUser, asy
     const db = getDB();
     const { application_id } = req.params;
     const { status } = req.body; 
-
+    let totalPointsEarned = 0;
     try {
         // 1. Get application details
         const [apps] = await db.query(
@@ -652,13 +699,60 @@ AdminRoute.patch('/adoption_form/status_update/:application_id', verifyUser, asy
                 [application.cat_id]
             );
 
-            let message = `Your adoption application is now ${status}. Congratulations!`;
+            totalPointsEarned += 10;
+
+            let message = `Your adoption application is now ${status}. Congratulations! Please wait for your adoption certificate which you can view on your Profile page`;
 
             await db.query(
                 `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,
                 [application.user_id, message]
             );
-        } else if (status === 'Accepted') {
+
+            if (totalPointsEarned > 0) {
+                // Check if user already has a whiskermeter entry
+                const [rows] = await db.query(
+                    `SELECT points FROM whiskermeter WHERE user_id = ?`,
+                    [donator_id]
+                );
+
+                if (rows.length > 0) {
+                    // Update existing points by adding earned points
+                    await db.query(
+                    `UPDATE whiskermeter SET points = points + ?, last_updated = CURRENT_TIMESTAMP WHERE user_id = ?`,
+                    [totalPointsEarned, donator_id]
+                    );
+                } else {
+                    // Insert new whiskermeter row
+                    await db.query(
+                    `INSERT INTO whiskermeter (user_id, points) VALUES (?, ?)`,
+                    [donator_id, totalPointsEarned]
+                    );
+                }
+
+                const [[{ points }]] = await db.query(
+                    `SELECT points FROM whiskermeter WHERE user_id = ?`,
+                    [donator_id]
+                );
+
+                let newBadge = 'Toe Bean Trainee';
+                if (points >= 500) newBadge = 'The Catnip Captain';
+                else if (points >= 300) newBadge = 'Meowtain Mover';
+                else if (points >= 200) newBadge = 'Furmidable Friend';
+                else if (points >= 100) newBadge = 'Snuggle Scout';
+
+                await db.query(
+                    `UPDATE users SET badge = ? WHERE user_id = ?`,
+                    [newBadge, application.user_id]
+                );
+
+                let message = `Congratulations on achieving a badge of ${newBadge}. Keep on going!`;
+
+                await db.query(
+                    `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,
+                    [application.user_id, message]
+                );
+            }
+        } else if (status === 'Rejected') {
             let message = `Your adoption application is now ${status}. You can always apply again!`;
 
             await db.query(

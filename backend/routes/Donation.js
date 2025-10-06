@@ -117,7 +117,7 @@ DonationRoute.post('/donation_data', upload_donationProof.single('proof_image'),
 
       await db.query(
         `INSERT INTO donation_items (donation_id, donation_type, amount, food_type, quantity, description)
-         VALUES (?, ?, ?, ?, ?, ?)`,
+        VALUES (?, ?, ?, ?, ?, ?)`,
         [donation_id, donation_type, amount, food_type, quantity, description]
       );
 

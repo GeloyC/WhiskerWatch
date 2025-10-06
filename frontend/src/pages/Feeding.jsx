@@ -137,7 +137,7 @@ const Feeding = () => {
         } else {
           setError('Your submission failed. Please try again.');
         }
-      console.error('Submission failed:', err);
+      // console.error('Submission failed:', err);
     } finally {
       setLoading(false);
     }
@@ -165,7 +165,7 @@ const Feeding = () => {
       }
 
     } catch (err) {
-      console.error('Failed to fetch feeding date:', err);
+      console.error('Failed to fetch feeding date.');
     }
   };
 
@@ -184,7 +184,7 @@ const Feeding = () => {
         setHasSubmittedReport(hasReport); // this controls your "thank you" message
 
       } catch (err) {
-        console.error('Failed to fetch volunteer or report data:', err);
+        console.error('Failed to fetch volunteer or report data.');
       }
     };
 
