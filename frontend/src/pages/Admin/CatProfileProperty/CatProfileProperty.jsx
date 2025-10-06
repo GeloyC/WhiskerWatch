@@ -366,7 +366,7 @@ const CatProfileProperty = () => {
                                     {/* PREVIEW IMAGE HERE */}
                                     {/* IF NO IMAGE IS SELECTED YET = Display the label */}
                                     {!catImagePreview || catImagePreview.length === 0 ?  
-                                        <label className='hidden xl:flex lg:flex justify-center text-[#DC8801]'>Uploade a new Image here.</label>
+                                        <label className='hidden xl:flex lg:flex justify-center text-[#DC8801]'>Upload a new Image here.</label>
                                         :
                                         <div className='grid grid-cols-5 gap-2 w-full min-h-[250px]'>
 

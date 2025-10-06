@@ -97,7 +97,7 @@ const Home = () => {
                   {catList.map((cat) => (
                     <div key={cat.cat_id} onClick={() => navigate(`/catprofile/${cat.cat_id}`)}
                     className='w-[300px] xl:w-full lg:w-full md:w-[300px] sm:w-full grid grid-rows-[auto_auto] rounded-[25px] border-2 border-[#FFF] bg-white hover:border-2 hover:border-[#B5C04A] hover:scale-102 active:scale-98 transition-all duration-100'>
-                      <div className='overflow-hidden rounded-t-[25px] w-auto h-[250px] xl:w-full lg:w-full md:w-full '>
+                      <div className='overflow-hidden flex rounded-t-[25px] w-auto h-[250px] xl:w-full lg:w-full md:w-full '>
                         <img 
                         src={cat.thumbnail} 
                         alt={`cat image ${cat.cat_id}`} 

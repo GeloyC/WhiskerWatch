@@ -103,12 +103,12 @@ const CatProfile = () => {
 
 
     return (
-        <div className='relative flex flex-col min-h-screen'>
+        <div className='relative flex flex-col items-center w-full min-h-screen'>
             {/* <CatBot /> */}
             <NavigationBar />
 
-            <div className='relative flex flex-col justify-start items-center h-auto'>
-                <div className='hidden xl:flex justify-between fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-10'>
+            <div className='relative flex flex-col justify-start items-center xl:w-[1000px] lg:w-[900px] md:w-[700px] min-h-screen'>
+                <div className='hidden xl:flex justify-between fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-5'>
                     <button onClick={handlePreviousCat} className='cursor-pointer flex items-center justify-start bg-[#B5C04A] size-15 p-3 rounded-[50%] hover:scale-105 active:scale-95 transition-all duration-100'>
                         <img src="/src/assets/icons/arrow-left-no-tail.png" alt="arrow left" className='w-auto h-full' />
                     </button>
@@ -123,37 +123,7 @@ const CatProfile = () => {
                     <div className='relative flex flex-col items-center gap-2'>
 
                         <div className='relative grid xl:grid-cols-2 lg:grid-cols-2 justify-items-center w-full h-full p-5 gap-4 rounded-[10px]'>
-                            {/* <div className='flex flex-col item-center justify-center w-full gap-4 overflow-hidden rounded-[10px]'>
-                                <div className='flex items-center justify-center w-full min-w-[500px] min-h-[200px] rounded-[10px] object-contain overflow-hidden'>
-                                    {selectedImage ? (
-                                        <img src={selectedImage} alt="cat image" className='w-full h-full object-contain'/>
-                                    ) : (
-                                        <div className='w-full h-full flex object-contain items-center justify-center text-gray-400'>
-                                        No image available
-                                        </div>
-                                    )}
-                                </div>
-                                <div className='grid grid-cols-5 object-cover overflow-hidden gap-2 overflow-x-auto'>
-                                    {catImage.map((imageURL, index) => {
-                                        const isSelected = index === selectedImageIndex;
-                                        return (
-                                            <div key={index}
-                                                className={`w-[100px] h-[100px] overflow-hidden object-fill rounded-[10px] ${
-                                                    isSelected ? 'opacity-100' : 'opacity-40'
-                                                } hover:opacity-100 active:opacity-40`}>
-                                                <img
-                                                    src={imageURL.url}
-                                                    alt={`cat image ${index}`}
-                                                    className='w-full h-full object-cover'
-                                                    onClick={() => handleImageClick(index)}
-                                                />
-                                            </div>
-                                        );
-                                    })}
-
-
-                                </div>
-                            </div> */}
+                        
 
                             <div className='flex flex-col items-center justify-center w-full gap-2 xl:gap-4 lg:gap-4 md:gap-4 overflow-hidden rounded-[10px]'>
 

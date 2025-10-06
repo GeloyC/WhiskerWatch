@@ -54,7 +54,7 @@ const CatAdoption = () => {
 
 
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col h-screen'>
       <CatBot message={"There's a cat out there dreaming of a home like yours. When you adopt, you're not just saving a life — you're gaining a loyal companion who'll fill your days with love, laughter, and purrs."}/>
       <NavigationBar />
 
@@ -117,9 +117,9 @@ const CatAdoption = () => {
                     </div>
                   </div>
                 
-                  <p className='pl-2 text-[14px] h-[40px] text-[#555555] leading-tight text-justify break-words break-all whitespace-normal'>
+                  <textarea rows={5} disabled className='pl-2 text-[14px] h-[40px] text-[#555555] leading-tight  break-words break-all whitespace-normal'>
                     {cat.description.length > 50 ? cat.description.slice(0, 50) + '...' : cat.description}
-                  </p>
+                  </textarea>
                 </div>
               </div>
             </div>

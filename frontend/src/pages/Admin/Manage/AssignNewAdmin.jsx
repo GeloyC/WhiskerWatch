@@ -25,7 +25,7 @@ const AssignNewAdmin = () => {
     const assignAdmin = async (event, user_id) => { 
         event.preventDefault();
         try {
-            const response = await axios.patch('http://localhost:5000/manage/update_admin', {
+            const response = await axios.patch('http://localhost:5000/admin/manage/update_admin', {
                 user_id,  // <-- send in body here
             });
             console.log('Update success:', response.data);

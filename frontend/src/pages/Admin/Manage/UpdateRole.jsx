@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link, resolvePath, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import { useSession } from '../../../context/SessionContext';
 
 const UpdateRole = () => {
     const location = useLocation();
+    const { user } = useSession();
 
     const { user_id } = useParams();
-    const [user, setUser] = useState({
-        firstname: '',
-        lastname: '',
-        email: '',
-        role: ''
-    });
+    // const [user, setUser] = useState({
+    //     firstname: '',
+    //     lastname: '',
+    //     email: '',
+    //     role: ''    // });
     const [role, setRole] = useState(''); 
     const [roleOriginal, setRoleOriginal] = useState()
 
@@ -22,9 +22,8 @@ const UpdateRole = () => {
     useEffect(() => {
         const fetchUser = async (user_id) => {
             try {
-                const response = await axios.get(`http://localhost:5000/manage/role/${user_id}`);
+                const response = await axios.get(`http://localhost:5000/admin/manage/role/${user?.user_id}`);
 
-                setUser(response.data)
                 setRole(response.data.role)
                 setRoleOriginal(response.data.role)
 
@@ -40,10 +39,9 @@ const UpdateRole = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.patch(`http://localhost:5000/manage/update/${user_id}`, {
+            const response = await axios.patch(`http://localhost:5000/admin/manage/update/${user?.user_id}`, {
                 firstname: user.firstname,
                 lastname: user.lastname,
-                email: user.email,
                 role: role
             });
 
@@ -65,24 +63,24 @@ const UpdateRole = () => {
 
     // Gets the user_id of user currently logged In from cookies
     // Current user can't update its own role
-    const getUserFromCookie = () => {
-        const cookieString = document.cookie
-            .split('; ')
-            .find(row => row.startsWith('user='));
+    // const getUserFromCookie = () => {
+    //     const cookieString = document.cookie
+    //         .split('; ')
+    //         .find(row => row.startsWith('user='));
 
-        if (!cookieString) return null;
-        try {
-            const cookieValue = cookieString.split('=')[1];
-            const decoded = decodeURIComponent(cookieValue);
-            return JSON.parse(decoded);
-        } catch (err) {
-            console.error('Failed to parse user cookie', err);
-            return null;
-        }
-    };
+    //     if (!cookieString) return null;
+    //     try {
+    //         const cookieValue = cookieString.split('=')[1];
+    //         const decoded = decodeURIComponent(cookieValue);
+    //         return JSON.parse(decoded);
+    //     } catch (err) {
+    //         console.error('Failed to parse user cookie', err);
+    //         return null;
+    //     }
+    // };
 
 
-    const loggedInUser = getUserFromCookie();
+    const loggedInUser = user;
     const loggedInUserId = loggedInUser?.user_id;
 
     const isEditingSelf = Number(user_id) === Number(loggedInUserId);
@@ -100,12 +98,12 @@ const UpdateRole = () => {
             {user && (
                 <div className='flex justify-between w-full gap-4'>
                     <div className='flex flex-col w-full justify-start'>
-                        <label className='text-[#595959] text-[14px]'>Name</label>
-                        <label className='p-2 border-1 border-[#CCCCCC] rounded-[10px] font-bold'>{`${user.firstname} ${user.lastname}`}</label>
+                        <label className='text-[#595959] text-[14px]'>Firstname</label>
+                        <label className='p-2 border-1 border-[#CCCCCC] rounded-[10px] font-bold'>{`${user?.firstname}`}</label>
                     </div>
                     <div className='flex flex-col w-full justify-start'>
-                        <label className='text-[#595959] text-[14px]'>Email</label>
-                        <label className='p-2 border-1 border-[#CCCCCC] rounded-[10px] font-bold'>{user.email}</label>
+                        <label className='text-[#595959] text-[14px]'>Lastname</label>
+                        <label className='p-2 border-1 border-[#CCCCCC] rounded-[10px] font-bold'>{user?.lastname}</label>
                     </div>
                     <div className='flex flex-col w-full justify-start'>
                         <label className='text-[#595959] text-[14px]'>{isEditingSelf ? "Role: Can't update role if currently logged In"  : 'Role'}</label>

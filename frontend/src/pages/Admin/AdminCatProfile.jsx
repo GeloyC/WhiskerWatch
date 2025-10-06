@@ -92,7 +92,7 @@ const AdminCatProfile = () => {
                   <td>{cat.cat_id}</td>
                   <td>{cat.name}</td>
                   <td>{cat.gender}</td>
-                  <td className='break-words break-all whitespace-normal pr-4'>{cat.description}</td>
+                  <td className='break-words break-all whitespace-normal pr-4'>{cat.description.length > 50 ? cat.description.slice(0, 100) + '...' : cat.description}</td>
                   <td className='flex flex-row items-center justify-between w-full'>
                     <label>{cat.adoption_status}</label>
 

@@ -32,6 +32,11 @@ const Login = () => {
     setError("");
 
     let user = null;
+    if (!emailRegex.test(email)) {
+        setError('Please enter a valid email address');
+        return;
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:5000/user/login",
@@ -40,19 +45,15 @@ const Login = () => {
       );
 
       
-      if (!emailRegex.test(email)) {
-          setError('Please enter a valid email address');
-          return;
-      }
 
       user = response.data.user;
-      console.log("Login response:", response.data);
+      console.log("Login response:", user);
 
       setUser(user); // from context
       // Cookies.set("user", JSON.stringify(user), { expires: 30 });
       // sessionStorage.setItem("user", JSON.stringify(user));
 
-      if (user.role === "regular" || user.role === "head_volunteer") {
+      if (user?.role === "regular" || user?.role === "head_volunteer") {
         navigate("/home");
       } else {
         setError("Username & Password Incorrect");
