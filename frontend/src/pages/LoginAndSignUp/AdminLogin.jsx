@@ -17,7 +17,7 @@ const AdminLogin = () => {
     const [error, setError] = useState('');
 
 
-    const { login, refreshSession } = useSession(); // Add refreshSession
+    const { login, refreshSession } = useSession(); 
 
     const handleAdminLogin = async (event) => {
         event.preventDefault();
@@ -34,7 +34,6 @@ const AdminLogin = () => {
             return;
         }
 
-        console.log('Login response:', userData);
 
         if (userData.role === 'admin') {
             login(userData); // Set user in session context

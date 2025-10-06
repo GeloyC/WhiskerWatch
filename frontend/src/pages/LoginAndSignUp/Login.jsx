@@ -47,11 +47,10 @@ const Login = () => {
       
 
       user = response.data.user;
-      console.log("Login response:", user);
+
 
       setUser(user); // from context
-      // Cookies.set("user", JSON.stringify(user), { expires: 30 });
-      // sessionStorage.setItem("user", JSON.stringify(user));
+    
 
       if (user?.role === "regular" || user?.role === "head_volunteer") {
         navigate("/home");

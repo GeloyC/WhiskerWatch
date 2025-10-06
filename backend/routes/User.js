@@ -214,52 +214,6 @@ UserRoute.post('/check_username', async (req, res) => {
 
 
 
-// UserRoute.post('/login', async (req, res) => {
-//     let db = getDB();
-//     try {
-//         const { email, password } = req.body;
-
-//         if (!email || !password) {
-//             return res.status(400).json({ error: 'Email and password are required' });
-//         }
-
-//         const isMatch = await bcrypt.compare(password, user.password);
-//         if (!isMatch) {
-//           return res.status(401).json({ error: "Invalid credentials" });
-//         }
-
-//         const [rows] = await db.query(
-//             'SELECT * FROM users WHERE email = ? and password = ?', [email, password]
-//         );
-
-//         if (rows.length === 0) {
-//             return res.status(401).json({ error: 'Invalid email or password' });
-//         }
-
-//         const user = rows[0];
-//         req.session.user = {
-//             user_id: user.user_id,
-//             role: user.role,
-//             firstname: user.firstname,
-//             lastname: user.lastname,
-//         };
-
-
-//         res.status(200).json({
-//             message: 'Login successful',
-//             user: {
-//                 user_id: user.user_id,
-//                 role: user.role,
-//                 firstname: user.firstname,
-//                 lastname: user.lastname,
-//             },
-//         });
-//     } catch (err) {
-//         console.error('Login error:', err);
-//         res.status(500).json({ err: 'Internal server error' });
-//     }
-// });
-
 
 UserRoute.post("/login", async (req, res) => {
   const db = getDB();
@@ -270,7 +224,6 @@ UserRoute.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Email and password are required" });
     }
 
-    // ✅ 1. Check if the email exists
     const [rows] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
     if (rows.length === 0) {
       return res.status(401).json({ error: "Invalid email or password" });
@@ -278,13 +231,12 @@ UserRoute.post("/login", async (req, res) => {
 
     const user = rows[0];
 
-    // ✅ 2. Compare entered password with hashed password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(401).json({ error: "Invalid email or password" });
     }
 
-    // ✅ 3. Save session info (optional)
+
     req.session.user = {
       user_id: user.user_id,
       role: user.role,
@@ -292,7 +244,7 @@ UserRoute.post("/login", async (req, res) => {
       lastname: user.lastname,
     };
 
-    // ✅ 4. Respond with safe user info (no password)
+
     res.status(200).json({
       message: "Login successful",
       user: {
@@ -429,57 +381,70 @@ UserRoute.get('/logged', async (req, res) => {
 });
 
 
+UserRoute.post("/adminlogin", async (req, res) => {
+  const db = getDB();
 
-UserRoute.post('/adminlogin', async (req, res) => {
   try {
-    let db = getDB();
     const { username, password } = req.body;
 
     if (!username || !password) {
-      return res.status(400).json({ error: 'Username and password are required' });
+      return res.status(400).json({ error: "Username and password are required" });
     }
 
-    const [users] = await db.query(
-      'SELECT * FROM users WHERE username = ? and password = ?',
-      [username, password]
-    );
 
-    if (users.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials!' });
+    const [rows] = await db.query("SELECT * FROM users WHERE username = ?", [username]);
+
+    if (rows.length === 0) {
+      return res.status(401).json({ error: "Invalid credentials!" });
     }
 
-    const user = users[0];
+    const user = rows[0];
 
-    // Store user data in session
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid credentials!" });
+    }
+
+
+    if (user.role !== "admin") {
+      return res.status(403).json({ error: "Access denied. Admins only." });
+    }
+
+
     req.session.user = {
       user_id: user.user_id,
       role: user.role,
       firstname: user.firstname,
       lastname: user.lastname,
-      profile_image: user.profile_image
+      profile_image: user.profile_image,
     };
+
 
     req.session.save((err) => {
       if (err) {
-        console.error('Session save error:', err);
-        return res.status(500).json({ error: 'Failed to save session' });
+        console.error("Session save error:", err);
+        return res.status(500).json({ error: "Failed to save session" });
       }
+
+
       res.status(200).json({
-        message: 'Login successful',
+        message: "Admin login successful",
         user: {
           user_id: user.user_id,
           role: user.role,
           firstname: user.firstname,
           lastname: user.lastname,
-          profile_image: user.profile_image, // Include in response
+          profile_image: user.profile_image,
         },
       });
     });
   } catch (err) {
-    console.error('Login error:', err);
-    res.status(500).json({ err: 'Internal server error' });
+    console.error("Admin login error:", err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 UserRoute.get('/profile', async (req, res) => {
     let db = getDB();

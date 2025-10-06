@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Router } from "express";
 import {getDB} from "../database.js"
-import cookieParser from 'cookie-parser';
+import bcrypt from 'bcrypt';
 
 import multer from 'multer';
 import fs, { stat } from 'fs';
@@ -34,7 +34,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-AdminRoute.use(cookieParser());
+
 AdminRoute.use('/FileUploads', express.static(path.join(__dirname, 'FileUploads')));
 
 
