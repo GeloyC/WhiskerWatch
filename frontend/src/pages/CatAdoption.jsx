@@ -55,7 +55,7 @@ const CatAdoption = () => {
 
   return (
     <div className='flex flex-col min-h-screen'>
-      <CatBot />
+      <CatBot message={"There's a cat out there dreaming of a home like yours. When you adopt, you're not just saving a life — you're gaining a loyal companion who'll fill your days with love, laughter, and purrs."}/>
       <NavigationBar />
 
       <Whisker />

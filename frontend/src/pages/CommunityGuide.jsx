@@ -18,7 +18,7 @@ const CommunityGuide = () => {
 
   return (
     <div className='flex flex-col justify-start items-center min-h-screen'>
-      {/* <CatBot /> */}
+      <CatBot message={`Community Guidelines!! Best to follow them all the time.`}/>
       <NavigationBar />
 
       <Whisker />

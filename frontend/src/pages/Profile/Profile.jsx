@@ -7,7 +7,7 @@ import { useLocation, useParams } from 'react-router-dom'
 
 import NavigationBar from '../../components/NavigationBar'
 import Footer from '../../components/Footer'
-import SideNavigation from '../../components/SideNavigation'
+import CatBot from '../../components/CatBot'
 
 
 import { useSession } from '../../context/SessionContext'
@@ -157,6 +157,9 @@ const Profile = () => {
 
     return (
         <div className='flex flex-col min-h-screen'>
+            <CatBot message = {`Welcome to your profile ${user?.firstname} ${user?.lastname}! here you can make changes, see your WhiskerMeter progress, and your profile overview!`}/>
+
+
             <NavigationBar />
             <div className='flex flex-col h-full xl:py-10 lg:py-10'>
                 <div className='flex flex-col items-center justify-center w-full'>
@@ -174,7 +177,7 @@ const Profile = () => {
                         
 
                         <div className='flex flex-col'>
-                            <div className='flex flex-col bg-[#FFF] gap-4 p-[3%] rounded-t-[10px] border-dashed border-b-2 border-b-[#8f8f8f]'>
+                            <div className='flex flex-col  gap-4  rounded-t-[10px] border-dashed border-b-2 border-b-[#8f8f8f]'>
                                 {/* MAIN PROFILE */}
                                 <div className='w-full text-center font-bold text-3xl text-[#889132]'>
                                     <span>MY PROFILE</span>
@@ -182,7 +185,7 @@ const Profile = () => {
                                 {!updateProfile && (
                                     <>
                                         {profile && (
-                                            <div className='relative flex flex-col xl:flex-row lg:flex-row gap-5'>
+                                            <div className='relative flex flex-col p-[2%] xl:flex-row lg:flex-row gap-5'>
                                                 <div className='flex flex-row xl:flex-col lg:flex-col gap-3 justify-center'>
                                                     <div className='flex w-[250px] h-[200px] bg-[#B5C04A] rounded-sm p-2'>
                                                         <img src={`http://localhost:5000/FileUploads/${profile.profile_image}` || '/src/assets/UserProfile/default_profile_image.jpg'} alt="" className='w-full h-full object-cover'/>
@@ -329,8 +332,9 @@ const Profile = () => {
                                                     onChange={(e) => setProfile((prev) => ({...prev, birthday: e.target.value}))}/>
                                                 </div>
 
-                                                <div className='flex flex-row justify-center xl:justify-end lg:justify-end pt-5 gap-2 w-full'>
+                                                <div className='flex flex-row justify-center xl:justify-end lg:justify-end py-3 gap-2 w-full'>
                                                     <button type='submit' className='bg-[#B5C04A] w-full xl:w-[90px] lg:w-[90px] p-2 rounded-[10px] text-[#000] hover:bg-[#CFDA34] active:bg-[#B5C04A] cursor-pointer'>Save</button>
+
                                                     <button type='button' onClick={profileUpdateWindow} className='bg-[#DC8801] w-full xl:w-[90px] lg:w-[90px] p-2 rounded-[10px] text-[#000] hover:bg-[#fe9f07] active:bg-[#977655] cursor-pointer'>Cancel</button>
                                                 </div>              
                                             </div>

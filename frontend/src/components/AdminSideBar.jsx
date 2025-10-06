@@ -95,7 +95,7 @@ const AdminSideBar = ({className}) => {
   const pageInactive = 'bg-[#FFF] w-full pl-20 pt-3 pb-2 hover:text-[#DC8801]';
 
   return (
-    <div className={`relative flex flex-col w-auto h-screen bg-[#FFF] z-50 ${className}`}>
+    <div className={`relative flex flex-col  duration-300 w-auto h-screen bg-[#FFF] z-50 ${className}`}>
       {error && (
         <div className='p-3 text-[#DC8801] bg-[#FDF5D8] rounded-lg text-[14px]'>
           {error}

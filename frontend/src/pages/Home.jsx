@@ -3,15 +3,9 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import NavigationBar from '../components/NavigationBar'
-import SideNavigation from '../components/SideNavigation'
-import HeadVolunteerSideBar from "../components/HeadVolunteerSideBar";
 import Footer from '../components/Footer'
 import CatBot from '../components/CatBot'
 
-import pic from "../assets/CatNewsModel.png";
-import news1 from "../assets/SampleNewsPic.png";
-import news2 from "../assets/news2.png";
-import news3 from "../assets/news3.png";
 
 import { useSession } from '../context/SessionContext'
 import Whisker from '../components/Whisker'
@@ -45,9 +39,16 @@ const Home = () => {
     fetchCats();
   }, []);
 
+
+
+
+
+
   return (
     <div className='relative flex flex-col w-full h-auto '>
-      {/* <CatBot /> */}
+      <CatBot message = {`${!user ? "Hi there! Glad you're here today. Join us now and explore more about WhiskerWatch" : `Glad to have you back ${user.firstname} ${user.lastname}`}! We hope you're having a wonderful day!`}/>
+
+
       <NavigationBar />
       <Whisker /> 
       {/* Cat Community News Section */}

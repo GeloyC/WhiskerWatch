@@ -243,11 +243,11 @@ const CatProfile = () => {
                                         </div>
                                     </div>
 
-                                    <div className='flex flex-col w-full gap-2'>
-                                        <Link onClick={(e) => verifyLoggedIn(e, `/adopteeform/${currentCat.cat_id}`)} className='bg-[#889132] text-[#FFF] font-bold p-2 rounded-[10px] text-center hover:bg-[#B5C04A] active:bg-[#889132]'>
+                                    <div className='flex flex-col xl:flex-row lg:flex-row w-full gap-2'>
+                                        <Link onClick={(e) => verifyLoggedIn(e, `/adopteeform/${currentCat.cat_id}`)} className='bg-[#889132] text-[#FFF] font-bold p-2 rounded-[10px] w-full text-center hover:bg-[#B5C04A] active:bg-[#889132]'>
                                             I want to adopt {currentCat.name}
                                         </Link>
-                                        <Link to="/catadoption" className='border-[#B5C04A] border-2 text-[#B5C04A] font-bold p-2 rounded-[10px] text-center hover:bg-[#B5C04A] hover:text-[#FFF] active:bg-[#CFDA34] active:border-[#CFDA34]'>
+                                        <Link to="/catadoption" className='border-[#B5C04A] border-2 text-[#B5C04A] bg-[#FFF] w-full font-bold p-2 rounded-[10px] text-center hover:bg-[#B5C04A] hover:text-[#FFF] active:bg-[#CFDA34] active:border-[#CFDA34]'>
                                             See other Cats
                                         </Link>
                                     </div>

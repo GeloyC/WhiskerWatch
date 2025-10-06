@@ -16,7 +16,7 @@ const ContactUs = () => {
 
   return (
     <div className='flex flex-col items-center min-h-screen'>
-      {/* <CatBot /> */}
+      <CatBot message={`Contact us anytime, we're always here to help!`}/>
       <NavigationBar />
 
       <Whisker />

@@ -209,7 +209,7 @@ const Feeding = () => {
   
   return (
     <div className='flex flex-col min-h-screen'>
-      {/* <CatBot /> */}
+      <CatBot message={!feedingDate ? `You can change a cat's day — and maybe their life. As a feeding volunteer, you'll help provide comfort, care, and love to cats waiting for their forever homes. Join us and make your kindness count!` : `Welcome back ${user?.firstname}!`}/>
       <NavigationBar />
 
       <Whisker />
@@ -353,7 +353,7 @@ const Feeding = () => {
                   {/* CONTENT SECTION FOR FEEDER INFO */}
                   <div className='flex flex-col items-center justify-start gap-2 w-full xl:h-auto lg:h-auto h-screen bg-[#FFF] px-5 py-10 rounded-[15px]'>
                     <label className='text-[20px] text-[#2F2F2F] pb-2 font-bold text-center'>
-                      Hi {`${user?.firstname} ${user?.lastname}`}, here's what you need to know ahead of your feeding schedule.
+                      {!isFeedingDatePassed & !hasSubmittedReport ? `Hi ${`${user?.firstname} ${user?.lastname}`}, here's what you need to know ahead of your feeding schedule.` : `Hey ${user?.firstname} ${user.lastname}, glad to have you. We're looking forward to our next feeding schedule with you!`}
                     </label>
   
                     <div className='w-full h-auto overflow-hidden object-fit rounded-[10px] pb-5'>
@@ -375,7 +375,7 @@ const Feeding = () => {
                               Thank you so much for Submitting a report for your recent feeding schedule ({feedingDate}). We appreciate your feedback.
                             </p>
                             <label className='bg-[#E3E697] p-2 pl-4 pr-4 rounded-[10px] text-[#6b7228] border-dashed border-2 border-[#99A339]'>
-                                We're looking forward for another feeding session with you, just wait for next feeding schedule to be updated. Thank you!
+                                We're looking forward for another feeding session with you, just wait for your next feeding schedule to be updated. Thank you!
                             </label>
                           </div>
                         ) : (

@@ -18,7 +18,7 @@ const CatCareGuides = () => {
   
   return (
     <div className='flex flex-col items-center min-h-screen'>
-      {/* <CatBot /> */}
+      <CatBot message={`For more information about our community cats, please visit our FB page at https://www.facebook.com/sprcats`}/>
       <NavigationBar />
       
       <Whisker />

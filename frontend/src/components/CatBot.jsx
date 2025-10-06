@@ -1,108 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const CatBot = () => {
+const CatBot = ({ message }) => {
+   const [messageDisplay, setMessageDisplay] = useState('');
    const location = useLocation();
-   const isLoginRoute = location.pathname === '/login';
-   const isAboutUsRoute = location.pathname === '/aboutus';
-   const isCatCareGuideRoute = location.pathname === '/catcareguides';
-   const isContactUsRoute = location.pathname === '/contactus';
-   const isCommunityGuidelinesRoute = location.pathname === '/communityguide';
 
-   const [labelMessage, setLabelMessage] = useState(null);
-   const [isLabelVisible, setIsLabelVisible] = useState(false);
 
-   // State equivalent (using useState if needed, but here we use plain variables for simplicity)
-   const loginMessage1 = `Welcome to WhiskerWatch! I'm Whisky, glad to have you!`;
-   const loginMessage2 = "Login to your account and meet us, the cats of Siena!";
-   const aboutMessage = "For more information about our community cats, please visit our FB page at https://www.facebook.com/sprcats";
-   const catCareGuideMessage = "Cat Care Guide Message";
-   const contactUsMessage = "You may reach out to us for any inquiries or assistance while visiting our FB page!";
+   const showMessage = (delay = 0) => {
+      clearTimeout(window.catBotShow);
+      clearTimeout(window.catBotHide);
 
-   const CommunityGuidelinesMessage = "Community Guidelines Message";
+      // Show message after the specified delay
+      window.catBotShow = setTimeout(() => {
+         setMessageDisplay(message);
 
-  useEffect(() => {
-      let timerIn;
-      let timerOut;
-
-      if (isLoginRoute) {
-         timerIn = setTimeout(() => {
-            setLabelMessage(<>{loginMessage1}<br/><br/>{loginMessage2}</>);
-            setIsLabelVisible(true);
-         }, 2000);
-
-         timerOut = setTimeout(() => {
-            setIsLabelVisible(false);
+         // Hide after 4 seconds
+         window.catBotHide = setTimeout(() => {
+         setMessageDisplay('');
          }, 7000);
+      }, delay);
+   };
 
-      } 
-      else if (isAboutUsRoute) {
-         timerIn = setTimeout(() => {
-            setLabelMessage(<>{aboutMessage}</>);
-            setIsLabelVisible(true);
-         }, 2000);
-
-         timerOut = setTimeout(() => {
-            setIsLabelVisible(false);
-         }, 7000);
-      }
-      else if (isCatCareGuideRoute) {
-         timerIn = setTimeout(() => {
-            setLabelMessage(<>{catCareGuideMessage}</>);
-            setIsLabelVisible(true);
-         }, 2000);
-
-         timerOut = setTimeout(() => {
-            setIsLabelVisible(false);
-         }, 7000);
-      }
-      else if (isContactUsRoute) {
-         timerIn = setTimeout(() => {
-            setLabelMessage(<>{contactUsMessage}</>);
-            setIsLabelVisible(true);
-         }, 2000);
-
-         timerOut = setTimeout(() => {
-            setIsLabelVisible(false);
-         }, 7000);
-      } 
-      else if (isCommunityGuidelinesRoute) {
-         timerIn = setTimeout(() => {
-            setLabelMessage(<>{CommunityGuidelinesMessage}</>)
-            setIsLabelVisible(true)
-         }, 2000);
-
-         timerOut = setTimeout(() => {
-            setIsLabelVisible(false)
-         }, 7000)
-      }
-
-
+   useEffect(() => {
+      showMessage(1000); // delay 1 second for auto display
       return () => {
-         if (timerIn) clearTimeout(timerIn);
-         if (timerOut) clearTimeout(timerOut);
-
-         setLabelMessage(null);
-         setIsLabelVisible(false);
+         clearTimeout(window.catBotShow);
+         clearTimeout(window.catBotHide);
       };
-  }, [isLoginRoute, isAboutUsRoute, isCatCareGuideRoute, isContactUsRoute, isCommunityGuidelinesRoute]);
+   }, [location.pathname, message]);
 
+   return (
+      <div className="fixed bottom-5 right-5 flex flex-col justify-end items-end gap-1 z-50">
+         {messageDisplay && (
+         <div className="relative right-9 flex flex-col items-center justify-center text-[#000] max-w-[275px] h-auto bg-[#B5C04A] p-4 rounded-[15px] rounded-br-[0px] transition-all duration-300">
+            <label className="text-left text-[#FFF] text-sm">
+               {messageDisplay}
+            </label>
+         </div>
+         )}
 
-  return (
-    <div className="fixed bottom-5 right-5 flex flex-col justify-end items-end gap-2 z-50"> 
-
-      <div className={`relative right-9 flex flex-col items-center justify-center text-[#000] max-w-[275px] h-auto bg-[#DC8801] p-4 rounded-bl-xl rounded-tl-xl rounded-tr-xl transition-opacity duration-300  ${isLabelVisible ? 'opacity-100' : 'opacity-0 hidden'}`}>
-        <label className={`text-justify text-[#FFF] text-sm ${isLabelVisible ? 'opacity-100' : 'opacity-0 hidden'}`}>
-          {labelMessage || ''}
-        </label>
+         <button
+         onClick={() => showMessage(0)} // 👈 show immediately on click
+         className="flex items-center justify-center bg-[#B5C04A] box-border max-w-[75px] h-auto rounded-full p-[12px] "
+         >
+         <img
+            src="/src/assets/icons/CatBot.png"
+            alt="Cat Bot"
+            className="cursor-pointer hover:-rotate-10 active:rotate-10 transition-all duration-200"
+         />
+         </button>
       </div>
-
-      <button className="flex items-center justify-center bg-[#cfda34] box-border max-w-[75px] h-auto rounded-[100%] p-[12px] active:scale-90">
-        <img src="/src/assets/icons/CatBot.png" alt="Cat Bot"/>
-      </button>
-
-    </div>
-  );
+   );
 };
 
 export default CatBot;
+

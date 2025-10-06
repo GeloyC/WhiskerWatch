@@ -184,7 +184,7 @@ const Donate = () => {
         }
       });
 
-      setSuccessMessage('Thank you for donating to WhiskerWatch!')
+      setSuccessMessage("Thank you for donating! Your support keeps our cats safe, healthy, and loved while they wait for their forever families. We couldn't do this without you!")
       await fetchNotifications(user.user_id)
       triggerWhiskerUpdate();
 
@@ -201,7 +201,7 @@ const Donate = () => {
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen">
-      {/* <CatBot /> */}
+      <CatBot message={"Help us make a difference one paw at a time. Your support keeps our rescue running and our cats safe, healthy, and loved. Every donation, big or small, means the world to them (and to us)!"}/>
       <NavigationBar />
       <Whisker />
       <div className='flex flex-col min-h-screen pb-10 xl:pt-10 lg:pt-10 md:pt-5 sm:pt-0'>
