@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer';
-import SideNavigation from '../../components/SideNavigation';
+import Whisker from '../../components/Whisker'
 import CatBot from '../../components/CatBot';
 
 import { useSession } from '../../context/SessionContext';
@@ -104,16 +104,16 @@ const CatProfile = () => {
 
     return (
         <div className='relative flex flex-col items-center w-full min-h-screen'>
-            {/* <CatBot /> */}
+            <Whisker />
             <NavigationBar />
 
             <div className='relative flex flex-col justify-start items-center xl:w-[1000px] lg:w-[900px] md:w-[700px] min-h-screen'>
                 <div className='hidden xl:flex justify-between fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-5'>
                     <button onClick={handlePreviousCat} className='cursor-pointer flex items-center justify-start bg-[#B5C04A] size-15 p-3 rounded-[50%] hover:scale-105 active:scale-95 transition-all duration-100'>
-                        <img src="/src/assets/icons/arrow-left-no-tail.png" alt="arrow left" className='w-auto h-full' />
+                        <img src="/assets/icons/arrow-left-no-tail.png" alt="arrow left" className='w-auto h-full' />
                     </button>
                     <button onClick={handleNextCat} className='cursor-pointer  flex items-center justify-end bg-[#B5C04A] size-15 p-3 rounded-[50%] hover:scale-105 active:scale-95 transition-all duration-100'>
-                        <img src="/src/assets/icons/arrow-right-no-tail.png" alt="arrow right" className='w-auto h-full' />
+                        <img src="/assets/icons/arrow-right-no-tail.png" alt="arrow right" className='w-auto h-full' />
                     </button>
                 </div>
 
@@ -177,7 +177,7 @@ const CatProfile = () => {
                                         <div className='flex flex-col w-full'>
                                             <div className='flex flex-row items-center gap-1 border-b-1 border-b-[#B5C04A] pb-1 pt-1'>
                                                 <div className='flex flex-col items-center justify-center h-[25px] w-[25px] xl:h-[30px] xl:w-[30px] lg:h-[30px] lg:w-[30px] bg-[#B5C04A] p-[5px] rounded-[50%]'>
-                                                    <img src="/src/assets/icons/genders.png" alt="gender" />
+                                                    <img src="/assets/icons/genders.png" alt="gender" />
                                                 </div>
                                                 <div className='text-[14px]'>
                                                     <label className='font-bold pr-2'>Gender:</label>
@@ -186,7 +186,7 @@ const CatProfile = () => {
                                             </div>
                                             <div className='flex flex-row items-center gap-1 border-b-1 border-b-[#B5C04A] pb-1 pt-1'>
                                                 <div className='flex flex-col items-center justify-center h-[25px] w-[25px] xl:h-[30px] xl:w-[30px] lg:h-[30px] lg:w-[30px] bg-[#B5C04A] p-[5px] rounded-[50%]'>
-                                                    <img src="/src/assets/icons/hourglass-white.png" alt="gender" />
+                                                    <img src="/assets/icons/hourglass-white.png" alt="gender" />
                                                 </div>
                                                 <div className='text-[14px]'>
                                                     <label className='font-bold pr-2'>Age:</label>
@@ -195,7 +195,7 @@ const CatProfile = () => {
                                             </div>
                                             <div className='flex flex-row items-center gap-1 border-b-1 border-b-[#B5C04A] pb-1 pt-1'>
                                                 <div className='flex flex-col items-center justify-center h-[25px] w-[25px] xl:h-[30px] xl:w-[30px] lg:h-[30px] lg:w-[30px] bg-[#B5C04A] p-[5px] rounded-[50%]'>
-                                                    <img src="/src/assets/icons/status.png" alt="gender" />
+                                                    <img src="/assets/icons/status.png" alt="gender" />
                                                 </div>
                                                 <div className='text-[14px]'>
                                                     <label className='font-bold pr-2x'>Sterilization Status:</label>

@@ -13,6 +13,7 @@ const AllUsers = () => {
       try {
         const response = await axios.get('http://localhost:5000/admin/manage/users')
         setUsers(response.data);
+        console.log(response.data)
 
       } catch(err) {
           console.error('Error fetching users:', err);

@@ -162,13 +162,13 @@ const SignUp = () => {
 
     return (
         <div className='flex items-center justify-center xl:grid lg:grid md:flex xl:grid-cols-[60%_40%] lg:grid-cols-[60%_40%] xl:place-items-center md:items-center md:justify-center h-screen overflow-x-hidden'> 
-            <div className='hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-auto h-full overflow-hidden'>
-                <img src="src/assets/stray-cat.jpg" alt="stray-cat" />
+            <div className='hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-full h-full object-cover overflow-hidden'>
+                <img src="/assets/stray-cat.jpg" alt="stray-cat" className='w-full h-full object-cover'/>
             </div>
 
             <div className='flex flex-col gap-8 items-center justify-start w-full h-full px-10 py-10 xl:h-auto lg:h-auto md:h-auto'>
                 <Link to='/home' className='w-[250px] max-w-auto'>
-                    <img src="src/assets/whiskerwatchlogo-vertical.png" alt="" />
+                    <img src="/assets/whiskerwatchlogo-vertical.png" alt="" />
                 </Link>
 
                 {!otpForm && (

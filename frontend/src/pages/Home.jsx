@@ -56,9 +56,9 @@ const Home = () => {
           <div className='flex flex-col box-border w-full'>
             
             {/* MAIN CONTENT STARTS HERE */}
-            <div className="relative w-full h-[500px] xl:h-[600px] bg-[url('/src/assets/cats/cat-donate-bg.jpg')] bg-center bg-cover bg-no-repeat border-b-2 border-b-[#DC8801]">
+            <div className="relative w-full h-[500px] xl:h-[600px] bg-[url('/assets/cats/cat-donate-bg.jpg')] bg-center bg-cover bg-no-repeat border-b-2 border-b-[#DC8801]">
               <div className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[400px] xl:w-auto lg:w-auto md:w-auto gap-5'>
-                <img src="/src/assets/image/Slogan_image_outline.png" alt="stray-today-safe-tomorrow" className=''/>
+                <img src="/assets/image/Slogan_image_outline.png" alt="stray-today-safe-tomorrow" className=''/>
 
                 <div className='flex gap-1 items-center justify-center'>
                     <Link to={!user ? '/signup' : '/donate'} className='bg-[#B5C04A] p-2 px-4 rounded-[10px] font-bold text-[#FFF] hover:scale-105 active:scale-95 transition-all duration-100'>{!user ? 'JOIN US NOW' : 'DONATE'}</Link>
@@ -72,7 +72,7 @@ const Home = () => {
 
 
             <div className='flex flex-col items-center w-full'>
-              <div className='flex flex-col items-center gap-5 py-10 w-full bg-[#FFF] bg-[url(/src/assets/background-paws.png)] bg-cover bg-fit bg-repeat'>
+              <div className='flex flex-col items-center gap-5 py-10 w-full bg-[#FFF] bg-[url(/assets/background-paws.png)] bg-cover bg-fit bg-repeat'>
                 <label className='text-[#2F2F2F] text-[40px] text-center font-bold leading-tight'>From Stray to Stay: <br/> Caring for a Rescue Cat</label>
 
                 <div className='text-center text-[#2F2F2F] text-[20px] font-bold w-[400px] xl:w-[500px] lg:w-[500px] md:w-[500px]'>
@@ -80,7 +80,7 @@ const Home = () => {
                 </div>
               </div>
               
-              <div className='flex flex-col xl:flex-row w-full justify-center gap-10 py-10 leading-tight bg-[#B5C04A] border-y-2 border-y-[#889132] bg-[url(/src/assets/background-paws.png)] bg-cover bg-fit bg-repeat'>
+              <div className='flex flex-col xl:flex-row w-full justify-center gap-10 py-10 leading-tight bg-[#B5C04A] border-y-2 border-y-[#889132] bg-[url(/assets/background-paws.png)] bg-cover bg-fit bg-repeat'>
                 <div className='flex flex-col items-center justify-center rounded-[15px] p-4'>
                   <div className='text-[60px] text-[#FFF] text-center font-bold w-[350px]'>10, 000</div>
                   <div className='font-bold text-[20px] text-[#2F2F2F]'>Total Cats Adopted</div>
@@ -116,7 +116,7 @@ const Home = () => {
                               <label className="flex flex-row items-center font-bold text-[12px] gap-[5px]">
                                 <div className="flex items-center justify-center w-[20px] h-auto">
                                   <img
-                                    src="src/assets/icons/genders-black.png"
+                                    src="/assets/icons/genders-black.png"
                                     alt="female sign"
                                     className="object-cover"
                                   />
@@ -125,7 +125,7 @@ const Home = () => {
                               </label>
                               <label className="flex flex-row items-center font-bold text-[12px] gap-[5px]">
                                 <div className="flex items-center justify-center w-[15px] h-auto">
-                                  <img src="src/assets/icons/hourglass.png" alt="hourglas" />
+                                  <img src="/assets/icons/hourglass.png" alt="hourglas" />
                                 </div>
                                 {cat.age} years old
                               </label>

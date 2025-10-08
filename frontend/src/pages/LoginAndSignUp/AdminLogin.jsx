@@ -56,12 +56,12 @@ const AdminLogin = () => {
 
     return (
         <div className='flex items-center justify-center xl:grid lg:grid md:flex xl:grid-cols-[60%_40%] lg:grid-cols-[60%_40%] xl:place-items-center md:items-center md:justify-center h-screen overflow-hidden'>
-            <div className='hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-auto h-full overflow-hidden'>
-                <img src="src/assets/stray-cat.jpg" alt="stray-cat" />
+            <div className='hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-full h-full object-cover overflow-hidden'>
+                <img src="/assets/stray-cat.jpg" alt="stray-cat" className='w-full h-full object-cover'/>
             </div>
             <div className='flex flex-col items-center gap-10 w-100% min-w-[200px] h-auto p-15'> 
                 <div className='max-w-[250px]'>
-                    <img src="src/assets/whiskerwatchlogo-vertical.png" alt="" />
+                    <img src="/assets/whiskerwatchlogo-vertical.png" alt="" />
                 </div>
                 <form onSubmit={handleAdminLogin} className='flex flex-col items-center gap-8'>
                     <label className='text-[#2F2F2F] text-[24px] font-bold'> Admin Login </label>

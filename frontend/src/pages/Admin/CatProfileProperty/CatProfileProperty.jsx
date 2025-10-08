@@ -322,7 +322,7 @@ const CatProfileProperty = () => {
                                         <label className='text-[20px] text-[#2F2F2F] font-bold '> IMAGES </label>
                                         <button onClick={handleImageUploaderWindow} type='button' className='flex items-center gap-2 bg-[#2F2F2F] text-[#FFF] p-2 pl-4 pr-4 rounded-[25px] cursor-pointer active:bg-[#595959]'> 
                                             <div className='w-[20px] h-auto'>
-                                                <img src="/src/assets/icons/admin-icons/setting_white.png" alt=""/>
+                                                <img src="/assets/icons/admin-icons/setting_white.png" alt=""/>
                                             </div>
                                             Manage Images
                                         </button>
@@ -355,7 +355,7 @@ const CatProfileProperty = () => {
                                         {/* UPLOADER BUTTON */}
                                         <label htmlFor='image' className='flex items-center gap-2 bg-[#2F2F2F] text-[#FFF] p-2 pl-4 pr-4 rounded-[25px] cursor-pointer active:bg-[#595959]'> 
                                             <div className='w-[15px] h-auto'>
-                                                <img src="/src/assets/icons/add-white.png" alt=""/>
+                                                <img src="/assets/icons/add-white.png" alt=""/>
                                             </div>
                                             <input type="file" name="image" id="image" className='hidden'
                                             onChange={handleImageChange}/>

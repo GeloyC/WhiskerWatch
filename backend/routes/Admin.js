@@ -252,7 +252,7 @@ AdminRoute.patch('/manage/update_admin', async (req, res) => {
             UPDATE users SET role = 'admin' WHERE user_id = ?
         `, [user_id])
 
-        let message = `Your role is at WhiskerWatch is not update to admin. Congratulations`;
+        let message = `Your role at WhiskerWatch is now updated to admin. Congratulations`;
         
         await db.query(
             `INSERT INTO notifications (user_id, message) VALUES (?, ?)`,

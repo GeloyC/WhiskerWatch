@@ -30,7 +30,7 @@ const ContactUs = () => {
                 <div className='flex flex-row items-center justify-between border-b-2 border-b-[#B5C04A] pb-2'>
                   <label className='font-bold text-[18px]'>Delivery Option</label>
                   <div className='flex items-center justify-center h-auto w-[50px] p-2 bg-[#CFDA34] rounded-[25px]'>
-                    <img src="src/assets/icons/delivery.png" alt="box" className='w-full h-full object-contain'/>
+                    <img src="/assets/icons/delivery.png" alt="box" className='w-full h-full object-contain'/>
                   </div>
                 </div>
                 <div className='flex flex-col'>
@@ -47,7 +47,7 @@ const ContactUs = () => {
                 <div className='flex flex-row items-center justify-between border-b-2 border-b-[#B5C04A] pb-2'>
                   <label className='font-bold text-[18px]'>Veterinary Clinics</label>
                   <div className='flex items-center justify-center h-auto w-[50px] p-2 bg-[#CFDA34] rounded-[25px]'>
-                    <img src="src/assets/icons/clip-board.png" alt="box" className='max-w-full max-h-full object-contain'/>
+                    <img src="/assets/icons/clip-board.png" alt="box" className='max-w-full max-h-full object-contain'/>
                   </div>
                 </div>
                 <div className='flex flex-col'>
@@ -68,7 +68,7 @@ const ContactUs = () => {
                 <div className='flex flex-row items-center justify-between border-b-2 border-b-[#B5C04A] pb-2'>
                   <label className='font-bold text-[18px]'>Delivery Option</label>
                   <div className='flex items-center justify-center h-auto w-[50px] p-2 bg-[#CFDA34] rounded-[25px]'>
-                    <img src="src/assets/icons/delivery.png" alt="box" className='max-w-full max-h-full object-contain'/>
+                    <img src="/assets/icons/delivery.png" alt="box" className='max-w-full max-h-full object-contain'/>
                   </div>
                 </div>
                 <div className='flex flex-row justify-between items-center'>
@@ -80,13 +80,13 @@ const ContactUs = () => {
                     <label className='underline'>0960 354 4354</label>
                   </div>
                 </div>
-                <div className='flex flex-row justify-between items-center'>
-                  <div className='flex flex-col'>
+                <div className='flex flex-row justify-between  items-center'>
+                  <div className='flex flex-col w-fit'>
                     <label className='font-bold leading-tight'>Grinsy Petshop</label>
                     <label className='leading-tight'>Dona Soledad, Paranaque City</label>
                   </div>
                   <div>
-                    <label className='underline'>0927 335 7878</label>
+                    <label className='underline whitespace-norwap'>0927 335 7878</label>
                   </div>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const ContactUs = () => {
             </div> */}
 
             <div className='w-full h-[250px] rounded-[15px] overflow-hidden'>
-              <img src="/src/assets/cat-contacts.png" alt="" className='w-full h-full object-cover'/>
+              <img src="/assets/cat-contacts.png" alt="" className='w-full h-full object-cover'/>
             </div>
 
             <label className='leading-tight text-center'>

@@ -136,16 +136,16 @@ const Whisker = () => {
               <div className={`flex relative min-w-3 h-60 bg-[#FFF] border-4 border-[#FFF] rounded-full overflow-hidden ${whiskerVisible ? 'h-0 hidden' : 'min-h-auto flex'} shadow-lg`}>
                 <div className='flex flex-col items-center justify-evenly h-full'>
                   <div className='w-[15px] object-fit'>
-                    <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                    <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                   </div>
                   <div className='w-[15px] object-fit'>
-                    <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                    <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                   </div>
                   <div className='w-[15px] object-fit'>
-                    <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                    <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                   </div>
                   <div className='w-[15px] object-fit'>
-                    <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                    <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                   </div>
                 </div>
 
@@ -160,31 +160,31 @@ const Whisker = () => {
                 <div className={"grid grid-rows-5 justiy-items-start w-full text-[#2F2F2F] text-[14px] font-bold overflow-hidden whitespace-nowrap"}>
                   <label className={`flex items-center gap-5 `}>
                       <div className="w-[15px] h-[15px] object-contain">
-                          <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
+                          <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
                       </div>
                       The Catnip Captain
                   </label>
                   <label className={`flex items-center gap-5 `}>
                       <div className="w-[15px] h-[15px] object-contain">
-                          <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
+                          <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
                       </div>
                       Meowtain Mover
                   </label>
                   <label className={`flex items-center gap-5`}>
                       <div className="w-[15px] h-[15px] object-contain">
-                          <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
+                          <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
                       </div>
                       Furmidable Friend
                   </label>
                   <label className={`flex items-center gap-5`}>
                       <div className="w-[15px] h-[15px] object-contain">
-                          <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
+                          <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
                       </div>
                       Snuggle Scout
                   </label>
                   <label className={`flex items-center gap-5`}>
                       <div className="w-[15px] h-[15px] object-contain">
-                          <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
+                          <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover rotate-180" />
                       </div>
                       Toe Bean Trainee
                   </label>
@@ -202,7 +202,7 @@ const Whisker = () => {
           The WhiskerMeter
         </label>
         <div className="size-6 object-contain">
-          <img src="/src/assets/paw2.png" alt="Paw icon" className="w-full h-full object-cover" />
+          <img src="/assets/paw2.png" alt="Paw icon" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>

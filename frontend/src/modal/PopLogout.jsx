@@ -1,12 +1,11 @@
 import React from "react";
-import pic from "../assets/icons/warningicon.png";
 
 const PopLogout = ({ onCancel, onConfirm }) => {
   return (
     <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex justify-center items-center z-999">
       <div className="bg-white w-100 flex flex-col justify-center h-40 p-10 rounded-2xl shadow-lg relative">
         <img
-          src={pic}
+          src='/assets/icons/warningicon.png'
           alt="warning"
           className="bg-white rounded-full absolute top-[-30px] left-[160px] w-16 h-16 p-2 border-4 border-[#f9f7dc]"
         />

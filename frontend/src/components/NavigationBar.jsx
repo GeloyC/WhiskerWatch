@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import logo from '/src/assets/whiskerwatchlogo-no textmarks.png'
+import logo from '/assets/whiskerwatchlogo-no textmarks.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import NotificationBell from './NotificationBell';
 import PopLogout from "../modal/PopLogout.jsx";
@@ -127,7 +127,7 @@ const NavigationBar = () => {
                 {/* Menu */}
                 <div ref={mobileMenuRef}  className='relative'>
                   <button onClick={toggleShowMenu} className={`flex xl:hidden lg:hidden md:hidden sm:flex size-9 relative flex gap-2 items-center active:scale-90 ${MenuVisible ? 'rotate-90' : 'rotate-180'} transition-all duration-100`}>
-                    <img src="/src/assets/icons/burger-bar.png" alt="" />
+                    <img src="/assets/icons/burger-bar.png" alt="" />
                   </button>
 
                   {/* Dropdown for mobile view */}
@@ -146,7 +146,7 @@ const NavigationBar = () => {
                     <img src={
                       profileImage
                         ? `http://localhost:5000/FileUploads/${profileImage}`
-                        : "/src/assets/icons/account.png"
+                        : "/assets/icons/account.png"
                     } alt="" />
                   </div>
 

@@ -101,7 +101,7 @@ const CatAdoption = () => {
                       <label className="flex flex-row items-center font-bold text-[12px] gap-[5px]">
                         <div className="flex items-center justify-center w-[20px] h-auto">
                           <img
-                            src="src/assets/icons/genders-black.png"
+                            src="/assets/icons/genders-black.png"
                             alt="female sign"
                             className="object-cover"
                           />
@@ -110,14 +110,14 @@ const CatAdoption = () => {
                       </label>
                       <label className="flex flex-row items-center font-bold text-[12px] gap-[5px]">
                         <div className="flex items-center justify-center w-[15px] h-auto">
-                          <img src="src/assets/icons/hourglass.png" alt="hourglas" />
+                          <img src="/assets/icons/hourglass.png" alt="hourglas" />
                         </div>
                         {cat.age} years old
                       </label>
                     </div>
                   </div>
                 
-                  <textarea rows={5} disabled className='pl-2 text-[14px] h-[40px] text-[#555555] leading-tight  break-words break-all whitespace-normal'>
+                  <textarea rows={5} disabled className='resize-none pl-2 text-[14px] h-[40px] text-[#555555] leading-tight  break-words break-all whitespace-normal'>
                     {cat.description.length > 50 ? cat.description.slice(0, 50) + '...' : cat.description}
                   </textarea>
                 </div>

@@ -224,7 +224,7 @@ const Feeding = () => {
                     <div className='flex flex-row justify-between items-center p-3 bg-[#FFF] rounded-[15px]'>
                         <label className='font-bold text-[#DC8801]'>Feeders Form</label>
                         <div className='flex items-center justify-center w-[30px] h-auto'> 
-                            <img src="/src/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
+                            <img src="/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
                         </div>
                     </div>
     
@@ -238,7 +238,7 @@ const Feeding = () => {
                     <div className='flex flex-row justify-between items-center p-3 bg-[#FFF] xl:rounded-[10px] lg:rounded-[10px] border-b-2 border-dashed border-b-[#bababa] xl:border-none lg:border-none'>
                         <label className='font-bold text-[#DC8801]'>Feeding Info</label>
                         <div className='flex items-center justify-center w-[30px] h-auto'> 
-                            <img src="/src/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
+                            <img src="/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
                         </div>
                     </div>
                 </div>
@@ -358,7 +358,7 @@ const Feeding = () => {
   
                     <div className='w-full h-auto overflow-hidden object-fit rounded-[10px] pb-5'>
                       {/* INSERT CAT IMAGE HERE FOR VISUAL */}
-                      <img src="/src/assets/image/WhiskerWatch-FeedingMap 1.png" alt="feeding_map" className='w-full h-full object-cover'/>
+                      <img src="/assets/image/WhiskerWatch-FeedingMap 1.png" alt="feeding_map" className='w-full h-full object-cover'/>
                     </div>
                     
                     

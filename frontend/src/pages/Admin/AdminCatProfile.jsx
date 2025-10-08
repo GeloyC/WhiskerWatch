@@ -64,7 +64,7 @@ const AdminCatProfile = () => {
             <div className='hidden xl:flex lg:flex flex-row items-center gap-4'>
               <Link to="/catprofilecreate" className='flex flex-row items-center justify-center gap-3 p-3 pl-6 pr-6 min-w-[225px] h-auto bg-[#B5C04A] text-[#FFF] rounded-[15px] hover:bg-[#CFDA34] active:bg-[#B5C04A]'>
                 <div className='flex justify-center items-center w-[15px] h-auto'>
-                  <img src="/src/assets/icons/add-white.png" alt="" />
+                  <img src="/assets/icons/add-white.png" alt="" />
                 </div>  
                 <label className='inline-block text-[#FFF]'>Create Cat Profile</label>
               </Link>
@@ -100,7 +100,7 @@ const AdminCatProfile = () => {
 
                       <Link to={`/catprofileproperty/${cat.cat_id}`} className='p-2 pl-6 pr-6 w-auto h-auto bg-[#2F2F2F] text-[#FFF] rounded-[15px] cursor-pointer active:bg-[#595959]'>View</Link>
                       <button onClick={() => handleDeleteCatProfile(cat.cat_id)} className='w-[35px] h-[35px] p-2 border-2 border-[#DC8801] rounded-[25px] cursor-pointer active:bg-[#DC8801] hover:bg-[#FDF5D8]'>
-                        <img src="/src/assets/icons/delete_orange.png" alt="" className='w-full h-full object-cover'/>
+                        <img src="/assets/icons/delete_orange.png" alt="" className='w-full h-full object-cover'/>
                       </button>
                     </div>
                   </td>

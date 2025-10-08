@@ -103,14 +103,14 @@ const AdminSideBar = ({className}) => {
       )}
       <div className={`flex items-center justify-center gap-4  w-auto h-auto box-border ${sidebarShow ? 'pl-3 pr-12' : ''} pt-4 pb-4 cursor-pointer bg-white border-b-2 border-b-[#DC8801]`}>
         <div className={sidebarShow ? 'flex justify-center items-center w-[120px] h-auto p-1' : 'hidden'}>
-          <img onClick={() => navigate('/dashboard')} src="/src/assets/whiskerwatchlogo-no textmarks.png" alt="account" />
+          <img onClick={() => navigate('/dashboard')} src="/assets/whiskerwatchlogo-no textmarks.png" alt="account" />
         </div>
         <div className={sidebarShow ? 'leading-tight' : 'hidden'}>
           <label className='font-bold text-[18px]'> ADMIN </label>
           <label className='font-bold text-[18px]'> DASHBOARD </label>
         </div>
         <button className={'self-center w-[40px] h-[40px] object-contain'} onClick={handleShowSidebar}>
-          <img src="/src/assets/icons/burger-bar.png" alt="burger menu" className={`cursor-pointer w-full h-full object-cover ${sidebarShow ? 'rotate-90' : 'rotate-0'} transition-all duration-300`} />
+          <img src="/assets/icons/burger-bar.png" alt="burger menu" className={`cursor-pointer w-full h-full object-cover ${sidebarShow ? 'rotate-90' : 'rotate-0'} transition-all duration-300`} />
         </button>
       </div>
 
@@ -119,7 +119,7 @@ const AdminSideBar = ({className}) => {
           <Link to="/dashboard" className={location.pathname === "/dashboard" ? sideItemStyleCurrent : sideItemStyle}>
             <div className='flex flex-row items-center gap-4'>
               <div className='flex justify-center items-center w-[30px] h-auto'>
-                <img src="/src/assets/icons/admin-icons/sidedbar/dashboard.png" alt="account" />
+                <img src="/assets/icons/admin-icons/sidedbar/dashboard.png" alt="account" />
               </div>
               <label className={sidebarShow ? 'cursor-pointer font-bold hover:text-[#DC8801]' : 'hidden'}> Overview </label>
             </div>
@@ -128,7 +128,7 @@ const AdminSideBar = ({className}) => {
           <Link to="/admincatprofile" className={user?.role === 'head_volunteer' ? 'hidden' : (location.pathname === "/admincatprofile" || location.pathname === '/catprofileproperty/:cat_id' ? sideItemStyleCurrent : sideItemStyle)}>
             <div className='flex flex-row items-center gap-4'>
               <div className='flex justify-center items-center w-[30px] h-auto'>
-                <img src="/src/assets/icons/admin-icons/sidedbar/cat-profile.png" alt="account" />
+                <img src="/assets/icons/admin-icons/sidedbar/cat-profile.png" alt="account" />
               </div>
               <label className={sidebarShow ? 'cursor-pointer font-bold hover:text-[#DC8801]' : 'hidden'}> Cat Profiles </label>
             </div>
@@ -138,12 +138,12 @@ const AdminSideBar = ({className}) => {
             <div className='flex flex-row items-center justify-between w-full active:text-[#B5C04A]'>
               <div className='flex flex-row items-center gap-4'>
                 <div onClick={handleShowSidebar} className='flex justify-center items-center w-[30px] h-auto'>
-                  <img src="/src/assets/icons/admin-icons/sidedbar/adopters-visitors.png" alt="account" />
+                  <img src="/assets/icons/admin-icons/sidedbar/adopters-visitors.png" alt="account" />
                 </div>
                 <label className={sidebarShow ? 'cursor-pointer font-bold hover:text-[#DC8801]' : 'hidden'}> Adopters </label>
               </div>
               <button onClick={() => { toggleDropdown('adopters'); }} className={sidebarShow ? 'flex justify-center items-center w-[30px] h-auto p-[8px] rounded-[25px] hover:bg-[#FDF5D8] active:bg-[#FFF]' : 'hidden'}>
-                <img src="/src/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.adopters & sidebarShow ? 'rotate-0' : '-rotate-90'} />
+                <img src="/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.adopters & sidebarShow ? 'rotate-0' : '-rotate-90'} />
               </button>
             </div>
 
@@ -159,12 +159,12 @@ const AdminSideBar = ({className}) => {
             <div className='flex flex-row items-center justify-between w-full active:text-[#B5C04A]'>
               <div className='flex flex-row items-center gap-4'>
                 <div onClick={handleShowSidebar} className='flex justify-center items-center w-[30px] h-auto'>
-                  <img src="/src/assets/icons/admin-icons/sidedbar/in-kind-donation-application.png" alt="account" />
+                  <img src="/assets/icons/admin-icons/sidedbar/in-kind-donation-application.png" alt="account" />
                 </div>
                 <label className={sidebarShow ? 'cursor-pointer font-bold hover:text-[#DC8801]' : 'hidden'}> Feeding </label>
               </div>
               <button onClick={() => {toggleDropdown('feeding');}} className={sidebarShow ? 'flex justify-center items-center w-[30px] h-auto p-[8px] rounded-[25px] hover:bg-[#FDF5D8] active:bg-[#FFF]' : 'hidden'}>
-                <img src="/src/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.feeding ? 'rotate-0' : '-rotate-90'} />
+                <img src="/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.feeding ? 'rotate-0' : '-rotate-90'} />
               </button>
             </div>
 
@@ -182,12 +182,12 @@ const AdminSideBar = ({className}) => {
             <div className='flex flex-row items-center justify-between w-full active:text-[#B5C04A]'>
               <div className='flex flex-row items-center gap-4'>
                 <div onClick={handleShowSidebar} className='flex justify-center items-center w-[30px] h-auto'>
-                  <img src="/src/assets/icons/admin-icons/sidedbar/settings.png" alt="account" />
+                  <img src="/assets/icons/admin-icons/sidedbar/settings.png" alt="account" />
                 </div>
                 <label className={sidebarShow ?  'cursor-pointer font-bold hover:text-[#DC8801]' : 'hidden'}> Manage </label>
               </div>
               <button onClick={() => { toggleDropdown('manage'); }} className={sidebarShow ? 'flex justify-center items-center w-[30px] h-auto p-[8px] rounded-[25px] hover:bg-[#FDF5D8] active:bg-[#FFF]' : 'hidden'}>
-                <img src="/src/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.manage & sidebarShow ? 'rotate-0' : '-rotate-90'} />
+                <img src="/assets/icons/down-arrow-orange.png" alt="orange arrow" className={!dropdown.manage & sidebarShow ? 'rotate-0' : '-rotate-90'} />
               </button>
             </div>
 
@@ -207,7 +207,7 @@ const AdminSideBar = ({className}) => {
                 src={
                   profileImage
                     ? `http://localhost:5000/FileUploads/${profileImage}`
-                    : '/src/assets/icons/account.png'
+                    : '/assets/icons/account.png'
                 }
                 alt="account"
                 className='w-full h-full object-cover'
@@ -225,7 +225,7 @@ const AdminSideBar = ({className}) => {
 
           {sidebarShow && (
             <button  onClick={toggleVisibilityProfile} className='flex justify-center items-center w-[30px] h-auto p-2 bg-[#f0f2c8] hover:bg-[#E3E697] active:bg-[#f0f2c8] rounded-[15px]'>
-              <img src="/src/assets/icons/admin-icons/arrow-right.png" alt="" />
+              <img src="/assets/icons/admin-icons/arrow-right.png" alt="" />
             </button>
           )}
 

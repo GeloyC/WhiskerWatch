@@ -30,7 +30,7 @@ const CommunityGuide = () => {
 
               <div className='flex items-start gap-5'>
                 <div className='flex size-12 p-2 xl:size-17 lg:size-17 md:size-15 xl:p-4 lg:p-3 bg-[#f3e0c3] object-fill rounded-[75px]'>
-                  <img src="src/assets/icons/id.png" alt="id" className='min-w-full min-h-full object-cover'/>
+                  <img src="/assets/icons/id.png" alt="id" className='min-w-full min-h-full object-cover'/>
                 </div>
 
                 <div className='flex flex-col items-start w-full gap-2'>
@@ -41,7 +41,7 @@ const CommunityGuide = () => {
 
               <div className='flex items-start gap-5'>
                 <div className='flex size-12 p-2 xl:size-17 lg:size-17 md:size-15 xl:p-4 lg:p-3 bg-[#f3e0c3] object-fill rounded-[75px]'>
-                  <img src="src/assets/icons/trash-bin-black.png" alt="id" className='min-w-full min-h-full object-cover'/>
+                  <img src="/assets/icons/trash-bin-black.png" alt="id" className='min-w-full min-h-full object-cover'/>
                   {/* <img src="src/assets/icons/check.png" alt="check mark" className='absolute bottom-[-10%] right-[-10%] size-7'/> */}
                 </div>
 
@@ -54,7 +54,7 @@ const CommunityGuide = () => {
 
               <div className='flex items-start gap-5'>
                 <div className='flex size-12 p-2 xl:size-17 lg:size-17 md:size-15 xl:p-4 lg:p-3 bg-[#f3e0c3] object-fill rounded-[75px]'>
-                  <img src="src/assets/icons/cat-food.png" alt="id" className='min-w-full min-h-full object-cover'/>
+                  <img src="/assets/icons/cat-food.png" alt="id" className='min-w-full min-h-full object-cover'/>
                   {/* <img src="src/assets/icons/check.png" alt="check mark" className='absolute bottom-[-10%] right-[-10%] w-[35px] h-auto'/> */}
                 </div>
 
@@ -67,7 +67,7 @@ const CommunityGuide = () => {
 
               <div className='flex items-start gap-5'>
                 <div className='flex size-12 p-2 xl:size-17 lg:size-17 md:size-15 xl:p-4 lg:p-3 bg-[#f3e0c3] object-fill rounded-[75px]'>
-                  <img src="src/assets/icons/canned-food.png" alt="id" className='min-w-full min-h-full object-cover'/>
+                  <img src="/assets/icons/canned-food.png" alt="id" className='min-w-full min-h-full object-cover'/>
                   {/* <img src="src/assets/icons/check.png" alt="check mark" className='absolute bottom-[-10%] right-[-10%] w-[35px] h-auto'/> */}
                 </div>
 

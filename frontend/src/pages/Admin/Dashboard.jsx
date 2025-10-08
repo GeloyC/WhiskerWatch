@@ -170,7 +170,7 @@ const Dashboard = () => {
                       <label className='font-bold text-[30px]'>{users}</label>
                     </div>
                     <div className='w-[50px] h-[50px] object-fit'>
-                      <img src="/src/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
+                      <img src="/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
                     </div>
                   </div>
 
@@ -180,7 +180,7 @@ const Dashboard = () => {
                       <label className='font-bold text-[30px]'>{cats}</label>
                     </div>
                     <div className='w-[50px] h-[50px] object-fit'>
-                      <img src="/src/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
+                      <img src="/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
                     </div>
                   </div>
 
@@ -190,7 +190,7 @@ const Dashboard = () => {
                       <label className='font-bold text-[30px]'>{adopters}</label>
                     </div>
                     <div className='w-[50px] h-[50px] object-fit'>
-                      <img src="/src/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
+                      <img src="/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
                     </div>
                   </div>
 
@@ -200,7 +200,7 @@ const Dashboard = () => {
                       <label className='font-bold text-[30px]'>{adoptedCats}</label>
                     </div>
                     <div className='w-[50px] h-[50px] object-fit'>
-                      <img src="/src/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
+                      <img src="/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
                     </div>
                   </div>
 
@@ -210,7 +210,7 @@ const Dashboard = () => {
                       <label className='font-bold text-[30px]'>Php {formattedTotalMoney}</label>
                     </div>
                     <div className='w-[50px] h-[50px] object-fit'>
-                      <img src="/src/assets/icons/admin-icons/total-donation.png" alt="" className='w-full h-full object-cover'/>
+                      <img src="/assets/icons/admin-icons/total-donation.png" alt="" className='w-full h-full object-cover'/>
                     </div>
                   </div>
                 </div>
@@ -227,7 +227,7 @@ const Dashboard = () => {
                           <label className='font-bold text-[30px]'>{newUsers}</label>
                         </div>
                         <div className='w-[50px] h-[50px] object-fit'>
-                          <img src="/src/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
+                          <img src="/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
                         </div>
                       </div>
 
@@ -237,7 +237,7 @@ const Dashboard = () => {
                           <label className='font-bold text-[30px]'>{newCats}</label>
                         </div>
                         <div className='w-[50px] h-[50px] object-fit'>
-                          <img src="/src/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
+                          <img src="/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
                         </div>
                       </div>
 
@@ -247,7 +247,7 @@ const Dashboard = () => {
                             <label className='font-bold text-[30px]'>{adoptedsMonth}</label>
                           </div>
                           <div className='w-[50px] h-[50px] object-fit'>
-                            <img src="/src/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
+                            <img src="/assets/icons/admin-icons/total--user.png" alt="" className='w-full h-full object-cover'/>
                           </div>
                         </div>
 
@@ -257,7 +257,7 @@ const Dashboard = () => {
                             <label className='font-bold text-[30px]'>{newAdoptedCats}</label>
                           </div>
                           <div className='w-[50px] h-[50px] object-fit'>
-                            <img src="/src/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
+                            <img src="/assets/icons/admin-icons/total-cats.png" alt="" className='w-full h-full object-cover'/>
                           </div>
                         </div>
 
@@ -267,7 +267,7 @@ const Dashboard = () => {
                             <label className='font-bold text-[30px]'>Php {formattedmongthlyMoney}</label>
                           </div>
                           <div className='w-[50px] h-[50px] object-fit'>
-                            <img src="/src/assets/icons/admin-icons/total-donation.png" alt="" className='w-full h-full object-cover'/>
+                            <img src="/assets/icons/admin-icons/total-donation.png" alt="" className='w-full h-full object-cover'/>
                           </div>
                         </div>
                     </div>

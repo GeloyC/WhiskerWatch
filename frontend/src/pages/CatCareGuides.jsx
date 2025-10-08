@@ -38,7 +38,7 @@ const CatCareGuides = () => {
 
               <div className='flex flex-row items-center gap-3'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/house.png" alt="" className='max-w-full max-h-full object-fill'/>
+                  <img src="/assets/icons/CatCareGuides/house.png" alt="" className='max-w-full max-h-full object-fill'/>
                 </div>
                 <label className='w-full font-bold text-center'>Creating a Safe Space</label>
               </div>
@@ -64,7 +64,7 @@ const CatCareGuides = () => {
               <label className='absolute flex items-center justify-center -top-5 right-[50%] translate-x-1/2 size-12 border-5 border-[#FFF] font-bold text-2xl bg-[#DC8801] text-[#FFF] p-3 rounded-[50%]'> 2 </label>
               <div className='flex flex-row items-center gap-3'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/pet-food.png" alt="pet food" className='max-w-full max-h-full object-contain'/>
+                  <img src="/assets/icons/CatCareGuides/pet-food.png" alt="pet food" className='max-w-full max-h-full object-contain'/>
                 </div>
                 <label className='w-full font-bold text-center'>Maintain Good Nutrition</label>
               </div>
@@ -92,7 +92,7 @@ const CatCareGuides = () => {
 
               <div className='flex flex-row items-center gap-3 w-100%'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/cat-box.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
+                  <img src="/assets/icons/CatCareGuides/cat-box.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
                 </div>
                 <label className='w-full font-bold text-center'>Support Litter Training</label>
               </div>
@@ -120,7 +120,7 @@ const CatCareGuides = () => {
 
               <div className='flex flex-row items-center gap-3 w-100%'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/first-aid-kit.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
+                  <img src="/assets/icons/CatCareGuides/first-aid-kit.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
                 </div>
                 <label className='w-full font-bold text-center'>Visit the Vet</label>
               </div>
@@ -149,7 +149,7 @@ const CatCareGuides = () => {
 
               <div className='flex flex-row items-center gap-3 w-100%'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/injury.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
+                  <img src="/assets/icons/CatCareGuides/injury.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
                 </div>
                 <label className='w-full font-bold text-center'>Understand Cat Behavior</label>
               </div>
@@ -177,7 +177,7 @@ const CatCareGuides = () => {
 
               <div className='flex flex-row items-center gap-3 w-100%'>
                 <div className='h-auto w-[80px] p-4 object-contain flex items-center justify-center bg-[#B5C04A] rounded-[25%]'>
-                  <img src="src/assets/icons/CatCareGuides/paw.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
+                  <img src="/assets/icons/CatCareGuides/paw.png" alt="cat litter box" className='max-w-full max-h-full object-contain'/>
                 </div>
                 <label className='w-full font-bold text-center'>Make indoor Life Fun</label>
               </div>

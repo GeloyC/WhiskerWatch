@@ -10,6 +10,8 @@ import Whisker from '../components/Whisker';
 import { useSession } from '../context/SessionContext';
 import axios from 'axios';
 
+
+
 const Donate = () => {
   const { user, fetchNotifications , triggerWhiskerUpdate} = useSession();
 
@@ -218,8 +220,8 @@ const Donate = () => {
 
             {!successMessage ? (
               <form className='flex flex-col w-auto rounded-[10px] xl:gap-2 lg:gap-2 md:gap-2'>
-                <div className='flex flex-col items-center w-full bg-[#DC8801] bg-[url(src/assets/background-paws.png)] bg-cover bg-fit bg-repeat  p-5 gap-4'>
-                  <label className='text-[#FFF] text-[20px] font-bold leading-tight'> Hey, {`${user?.firstname} ${user?.lastname}`}, thinking of Donating?</label>
+                <div className='flex flex-col items-center w-full bg-[#DC8801] bg-[url(/assets/background-paws.png)] bg-cover bg-fit bg-repeat  p-5 gap-4'>
+                  <label className='text-[#FFF] text-[20px] font-bold leading-tight'> Hey {`${user?.firstname} ${user?.lastname}`}, thinking of Donating?</label>
 
                   <div className='flex flex-col xl:flex-row lg:flex-row gap-3 w-full rounded-[10px]'>
                     <label htmlFor="donate_money" className='cursor-pointer flex gap-5 p-2 rounded-[10px] bg-[#FFF] w-full'>
@@ -281,7 +283,7 @@ const Donate = () => {
                           <div className='flex flex-col items-center w-full pb-2'>
                             <label htmlFor="">Scan the QR code to complete the transaction</label>
                             <div className='w-[300px] h-[300px] object-fit rounded-[10px] overflow-hidden'>
-                              <img src="/src/assets/UserProfile/test_qr_code.jpg" alt="qr_code" className='w-full h-full object-cover'/>
+                              <img src="/assets/UserProfile/test_qr_code.jpg" alt="qr_code" className='w-full h-full object-cover'/>
                             </div>
                           </div>
                         </div>
@@ -313,13 +315,13 @@ const Donate = () => {
                               <div className='grid grid-cols-3 rounded-[10px] border-1 border-[#DC8801] w-full overflow-hidden'>
                                 <button type='button' onClick={subtractFoodQuantity} className='cursor-pointer flex items-center justify-center w-full p-2 hover:bg-[#fec260] w-full object-cover'>
                                   <div className='w-[20px] h-[20px]'>
-                                    <img src="/src/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
+                                    <img src="/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
                                   </div>
                                 </button>
                                 <input type="number" className='text-center w-auto' value={foodQuantity} onChange={(e) => setFoodQuantity(Number(e.target.value))}/>
                                 <button type='button' onClick={addFoodQuantity} className='cursor-pointer flex items-center justify-center p-2 hover:bg-[#fec260] w-full'>
                                   <div className='w-[20px] h-[20px]'>
-                                    <img src="/src/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
+                                    <img src="/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
                                   </div>
                                 </button>
                               </div>
@@ -350,13 +352,13 @@ const Donate = () => {
                               <div className='grid grid-cols-3 rounded-[10px] border-1 border-[#DC8801] w-full overflow-hidden'>
                                 <button type='button' onClick={subtractItemQuantity} className='cursor-pointer flex items-center justify-center w-full p-2 hover:bg-[#fec260] w-full object-cover'>
                                   <div className='w-[20px] h-[20px]'>
-                                    <img src="/src/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
+                                    <img src="/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
                                   </div>
                                 </button>
                                 <input type="number" className='text-center w-auto' value={itemQuantity} onChange={(e) => setItemQuantity(Number(e.target.value))}/>
                                 <button type='button' onClick={addItemQuantity} className='cursor-pointer flex items-center justify-center p-2 hover:bg-[#fec260] w-full'>
                                   <div className='w-[20px] h-[20px]'>
-                                    <img src="/src/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
+                                    <img src="/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
                                   </div>
                                 </button>
                               </div>
@@ -387,13 +389,13 @@ const Donate = () => {
                             <div className='grid grid-cols-3 rounded-[10px] border-1 border-[#DC8801] w-full overflow-hidden'>
                               <button type='button' onClick={subtractOtherQuantity} className='cursor-pointer flex items-center justify-center w-full p-2 hover:bg-[#fec260] w-full object-cover'>
                                 <div className='w-[20px] h-[20px]'>
-                                  <img src="/src/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
+                                  <img src="/assets/icons/subtract.png" alt="" className='w-full h-full object-contain'/>
                                 </div>
                               </button>
                               <input type="number" className='text-center w-auto' value={otherQuantity} onChange={(e) => setOtherQuantity(Number(e.target.value))}/>
                               <button type='button' onClick={addOtherQuantity} className='cursor-pointer flex items-center justify-center p-2 hover:bg-[#fec260] w-full'>
                                 <div className='w-[20px] h-[20px]'>
-                                  <img src="/src/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
+                                  <img src="/assets/icons/plus.png" alt="" className='w-full h-full object-contain'/>
                                 </div>
                               </button>
                             </div>

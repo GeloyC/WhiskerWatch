@@ -187,8 +187,8 @@ const Profile = () => {
                                         {profile && (
                                             <div className='relative flex flex-col p-[2%] xl:flex-row lg:flex-row gap-5'>
                                                 <div className='flex flex-row xl:flex-col lg:flex-col gap-3 justify-center'>
-                                                    <div className='flex w-[250px] h-[200px] bg-[#B5C04A] rounded-sm p-2'>
-                                                        <img src={`http://localhost:5000/FileUploads/${profile.profile_image}` || '/src/assets/UserProfile/default_profile_image.jpg'} alt="" className='w-full h-full object-cover'/>
+                                                    <div className='flex w-[250px] h-[250px] bg-[#B5C04A] rounded-sm p-2'>
+                                                        <img src={`${`http://localhost:5000/FileUploads/${profile.profile_image}` || '/assets/UserProfile/default_profile_image.jpg'}`} alt="" className='w-full h-full object-cover'/>
                                                     </div>
 
                                                     <div className='flex flex-row gap-2'>
@@ -204,7 +204,7 @@ const Profile = () => {
                                                         
                                                         <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                             <div className='w-[30px] h-auto'>
-                                                                <img src="/src/assets/icons/location-orange.png" alt="" />
+                                                                <img src="/assets/icons/location-orange.png" alt="" />
                                                             </div> 
                                                             Address: 
                                                         </label>
@@ -213,7 +213,7 @@ const Profile = () => {
                                                     <div className='flex flex-row items-center gap-3 border-b-2 border-dashed border-[#bbc3c1] pt-2 pb-2'>
                                                         <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                             <div className='w-[30px] h-auto'>
-                                                                <img src="/src/assets/icons/email-orange.png" alt="" />
+                                                                <img src="/assets/icons/email-orange.png" alt="" />
                                                             </div> 
                                                             Email: 
                                                         </label>
@@ -222,7 +222,7 @@ const Profile = () => {
                                                     <div className='flex flex-row items-center gap-3 border-b-2 border-dashed border-[#bbc3c1] pt-2 pb-2'>
                                                         <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                             <div className='w-[30px] h-auto'>
-                                                                <img src="/src/assets/icons/birthday-cake.png" alt="" />
+                                                                <img src="/assets/icons/birthday-cake.png" alt="" />
                                                             </div> 
                                                             Birthday: 
                                                         </label>
@@ -231,7 +231,7 @@ const Profile = () => {
                                                     <div className='flex flex-row items-center gap-3 border-b-2 border-dashed border-[#bbc3c1] pt-2 pb-2'>
                                                         <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                             <div className='w-[30px] h-auto'>
-                                                                <img src="/src/assets/icons/badge-orange.png" alt="" />
+                                                                <img src="/assets/icons/badge-orange.png" alt="" />
                                                             </div> 
                                                             Badge: 
                                                         </label>
@@ -254,7 +254,7 @@ const Profile = () => {
                                                                 >
                                                                     View Certificate #{index + 1}
                                                                     <div className='w-[25px] h-auto'>
-                                                                        <img src="/src/assets/icons/document-black.png" alt="" />
+                                                                        <img src="/assets/icons/document-black.png" alt="" />
                                                                     </div>
                                                                 </a>
                                                             ))
@@ -280,8 +280,8 @@ const Profile = () => {
                                                     profile.profile_image?.startsWith('blob:') 
                                                     ? profile.profile_image
                                                     : profile.profile_image
-                                                        ? `http://localhost:5000/FileUploads/${profile.profile_image}`
-                                                        : '/src/assets/UserProfile/default_profile_image.jpg'} alt="" 
+                                                        ? `http://localhost:5000/FileUploads/${profile.profile_image}` || '/assets/UserProfile/default_profile_image.jpg'
+                                                        : '/assets/UserProfile/default_profile_image.jpg'} alt="" 
                                                 className='w-full h-full object-cover'/>
                                             </div>
                                             
@@ -303,7 +303,7 @@ const Profile = () => {
                                                     
                                                     <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                         <div className='w-[30px] h-auto'>
-                                                            <img src="/src/assets/icons/location-orange.png" alt="" />
+                                                            <img src="/assets/icons/location-orange.png" alt="" />
                                                         </div> 
                                                         Address: 
                                                     </label>
@@ -313,7 +313,7 @@ const Profile = () => {
                                                 <div className='flex flex-row items-center gap-3 border-b-2 border-dashed border-[#bbc3c1] pt-2 pb-2'>
                                                     <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                         <div className='w-[30px] h-auto'>
-                                                            <img src="/src/assets/icons/email-orange.png" alt="" />
+                                                            <img src="/assets/icons/email-orange.png" alt="" />
                                                         </div> 
                                                         Email: 
                                                     </label>
@@ -324,7 +324,7 @@ const Profile = () => {
                                                 <div className='flex flex-row items-center gap-3 border-b-2 border-dashed border-[#bbc3c1] pt-2 pb-2'>
                                                     <label className='flex flex-row items-center font-bold gap-[5px]'>
                                                         <div className='w-[30px] h-auto'>
-                                                            <img src="/src/assets/icons/birthday-cake.png" alt="" />
+                                                            <img src="/assets/icons/birthday-cake.png" alt="" />
                                                         </div> 
                                                         Birthday: 
                                                     </label>
@@ -352,16 +352,16 @@ const Profile = () => {
                                 <div className='relative flex w-full'>
                                     <div className='absolute flex justify-evenly w-full'>
                                         <div className='w-[15px] object-fit rotate-90'>
-                                            <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                                            <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                                         </div>
                                         <div className='w-[15px] object-fit rotate-90'>
-                                            <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                                            <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                                         </div>
                                         <div className='w-[15px] object-fit rotate-90'>
-                                            <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                                            <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                                         </div>
                                         <div className='w-[15px] object-fit rotate-90'>
-                                            <img src="/src/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
+                                            <img src="/assets/icons/divider_line.png" alt="" className='w-full object-cover'/>
                                         </div>
                                     </div>
 
@@ -378,31 +378,31 @@ const Profile = () => {
                                 <div className='grid grid-cols-5 place-items-center'>
                                     <div className='flex flex-col items-center text-[14px]'>
                                         <div className="w-[15px] h-[15px] object-contain">
-                                            <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
+                                            <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
                                         </div>
                                         Toe Bean Trainee
                                     </div>
                                     <div className='flex flex-col items-center text-[14px]'>
                                         <div className="w-[15px] h-[15px] object-contain">
-                                            <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
+                                            <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
                                         </div>
                                         Snuggle Scout
                                     </div>
                                     <div className='flex flex-col items-center text-[14px]'>
                                         <div className="w-[15px] h-[15px] object-contain">
-                                            <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
+                                            <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
                                         </div>
                                         Furmidable Friend
                                     </div>
                                     <div className='flex flex-col items-center text-[14px]'>
                                         <div className="w-[15px] h-[15px] object-contain">
-                                            <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
+                                            <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
                                         </div>
                                         Meowtain Mover
                                     </div>
                                     <div className='flex flex-col items-center text-[14px]'>
                                         <div className="w-[15px] h-[15px] object-contain">
-                                            <img src="/src/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
+                                            <img src="/assets/icons/whisker_arrow.png" alt="Arrow icon" className="w-full h-full object-cover -rotate-90" />
                                         </div>
                                         The Catnip Captain
                                     </div>

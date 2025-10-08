@@ -14,7 +14,7 @@ import { useSession } from '../../context/SessionContext';
 
 const AdopteeForm = () => {
     
-    const [imageSrc, setImageSrc] = useState('/src/assets/icons/id-card.png');
+    const [imageSrc, setImageSrc] = useState('/assets/icons/id-card.png');
     const [foundOut, setFoundOut] = useState('');
     const [catRaised, setCatRaised] = useState('');
     const [havePets, setHavePets] = useState('');
@@ -151,7 +151,7 @@ const AdopteeForm = () => {
                             <div className='flex flex-row justify-between items-center p-3 bg-[#FFF] rounded-[15px] w-full'>
                                 <label className='font-bold text-[#DC8801]'>Adoptee Form</label>
                                 <div className='flex items-center justify-center w-[30px] h-auto'> 
-                                    <img src="/src/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
+                                    <img src="/assets/icons/clipboard-white.png" alt="white clipboard" className='w-full h-auto '/>
                                 </div>
                             </div>
 

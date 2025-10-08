@@ -44,7 +44,7 @@ const CatBot = ({ message }) => {
          className="flex items-center justify-center bg-[#B5C04A] box-border max-w-[75px] h-auto rounded-full p-[12px] "
          >
          <img
-            src="/src/assets/icons/CatBot.png"
+            src="/assets/icons/CatBot.png"
             alt="Cat Bot"
             className="cursor-pointer hover:-rotate-10 active:rotate-10 transition-all duration-200"
          />

@@ -145,17 +145,17 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center xl:grid lg:grid md:flex xl:grid-cols-[60%_40%] lg:grid-cols-[60%_40%] xl:place-items-center md:items-center md:justify-center h-screen overflow-hidden">
-      <div className="hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-auto h-full overflow-hidden">
-        <img src="src/assets/stray-cat.jpg" alt="stray-cat" />
+      <div className="hidden xl:block xl:items-center lg:block lg:items-center md:hidden box-border w-full h-full object-cover overflow-hidden">
+        <img src="/assets/stray-cat.jpg" alt="stray-cat" className="w-full h-full object-cover"/>
       </div>
       <div className="flex flex-col items-center justify-center gap-10 w-full h-full xl:p-10% lg:p-8% md:p-3% transition-all duration-100">
         {!resetPassForm ? (
           <Link to='/home' className='w-[250px] max-w-auto'>
-            <img src="src/assets/whiskerwatchlogo-vertical.png" alt="" />
+            <img src="/assets/whiskerwatchlogo-vertical.png" alt="" />
           </Link>
         ) : (
-          <div className="w-[200px] max-w-auto">
-            <img src="src/assets/whiskerwatchlogo-vertical.png" alt="logo" />
+          <div className="xl:w-[200px] lg:w-[200px] md:w-[200px] w-auto h-auto flex object-cover">
+            <img src="/assets/whiskerwatchlogo-vertical.png" alt="logo" className="w-full h-full object-cover"/>
           </div>
         )}
 

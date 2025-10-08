@@ -62,7 +62,7 @@ const NotificationBell = () => {
         <div className='relative flex items-center justify-center size-8 rounded-[10px]'>
           <img
             className='max-w-full max-h-full object-contain'
-            src="/src/assets/icons/notification-bell.png"
+            src="/assets/icons/notification-bell.png"
             alt="notification bell"
           />
         </div>
@@ -99,14 +99,14 @@ const NotificationBell = () => {
                         onClick={() => markAsRead(notif.notification_id)}
                         className="w-[20px] h-[20px] rounded-[15px] p-1 hover:bg-[#b6b6b6]"
                       >
-                        <img src="/src/assets/icons/mark_as_read.png" alt="mark as read" />
+                        <img src="/assets/icons/mark_as_read.png" alt="mark as read" />
                       </button>
                     )}
                     <button
                       onClick={() => deleteNotification(notif.notification_id)}
                       className="w-[21px] h-[21px] p-[2px] rounded-[12px] hover:bg-[#cdcdcd]"
                     >
-                      <img src="/src/assets/icons/trash-bin.png" alt="delete notification" />
+                      <img src="/assets/icons/trash-bin.png" alt="delete notification" />
                     </button>
                   </div>
                 </div>

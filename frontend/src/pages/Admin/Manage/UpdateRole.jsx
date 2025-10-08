@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Link, resolvePath, useParams, useLocation } from 'react-router-dom';
+import { Link, resolvePath, useParams, useLocation, useNavigation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useSession } from '../../../context/SessionContext';
 
 const UpdateRole = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { user } = useSession();
 
+    const goBack = () => {
+        navigate('/adminlist');
+    }
+
     const { user_id } = useParams();
-    // const [user, setUser] = useState({
-    //     firstname: '',
-    //     lastname: '',
-    //     email: '',
-    //     role: ''    // });
     const [role, setRole] = useState(''); 
     const [roleOriginal, setRoleOriginal] = useState()
 
@@ -91,7 +91,7 @@ const UpdateRole = () => {
             <div className='flex flex-col w-full gap-3 pb-3 border-b-1 border-b-[#CCCCCC]'>
                 <div className='flex justify-between w-full'>
                     <label className='self-start text-[24px] text-[#2F2F2F] font-bold'>Update Role</label>
-                    <Link to="/adminlist" className='cursor-pointer'>Close</Link>
+                    <button onClick={goBack} className='cursor-pointer'>Close</button>
                 </div>
             </div>
 

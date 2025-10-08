@@ -27,12 +27,6 @@ const FeedingApplications = () => {
   if (sessionLoading) return <div className="p-10">Loading session...</div>;
   if (!user) return <div className="p-10">No active session.</div>;
 
-  // let Sidebar = null;
-  // if (user.role === 'admin') {
-  //   Sidebar = <AdminSideBar />;
-  // } else if (user.role === 'head_volunteer') {
-  //   Sidebar = <HeadVolunteerSideBar />;
-  // }
 
   return (
     <div className='relative flex flex-col h-screen overflow-hidden'>
